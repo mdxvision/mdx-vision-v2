@@ -59,7 +59,7 @@ const certifications = [
 ];
 
 const integrations = [
-  { name: "Epic", logo: "/logos/integrations/epic.svg" },
+  { name: "Epic", logo: "/logos/integrations/epic.png" },
   { name: "Cerner", logo: "/logos/integrations/cerner.svg" },
   { name: "Veradigm", logo: "/logos/integrations/veradigm.svg" },
   { name: "MEDITECH", logo: "/logos/integrations/meditech.svg" },
