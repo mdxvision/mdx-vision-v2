@@ -1,9 +1,18 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 
-// Get basePath for GitHub Pages deployment
-const basePath = process.env.NODE_ENV === "production" ? "/mdx-vision-v2" : "";
+// Helper hook to get basePath for GitHub Pages
+function useBasePath() {
+  const [basePath, setBasePath] = useState("");
+  useEffect(() => {
+    if (typeof window !== "undefined" && window.location.hostname.includes("github.io")) {
+      setBasePath("/mdx-vision-v2");
+    }
+  }, []);
+  return basePath;
+}
 
 const certifications = [
   {
@@ -68,6 +77,8 @@ const stats = [
 ];
 
 export default function TrustSection() {
+  const basePath = useBasePath();
+
   return (
     <section
       id="trust"

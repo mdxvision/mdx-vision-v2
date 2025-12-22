@@ -1,7 +1,18 @@
-import Link from "next/link";
+"use client";
 
-// Get basePath for GitHub Pages deployment
-const basePath = process.env.NODE_ENV === "production" ? "/mdx-vision-v2" : "";
+import Link from "next/link";
+import { useEffect, useState } from "react";
+
+// Helper hook to get basePath for GitHub Pages
+function useBasePath() {
+  const [basePath, setBasePath] = useState("");
+  useEffect(() => {
+    if (typeof window !== "undefined" && window.location.hostname.includes("github.io")) {
+      setBasePath("/mdx-vision-v2");
+    }
+  }, []);
+  return basePath;
+}
 
 const footerLinks = {
   product: [
@@ -25,6 +36,8 @@ const footerLinks = {
 };
 
 export default function FooterDark() {
+  const basePath = useBasePath();
+
   return (
     <footer
       className="bg-dark-950 border-t border-glass-border"

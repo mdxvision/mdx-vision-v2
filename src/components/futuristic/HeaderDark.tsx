@@ -4,8 +4,16 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 
-// Get basePath for GitHub Pages deployment
-const basePath = process.env.NODE_ENV === "production" ? "/mdx-vision-v2" : "";
+// Helper hook to get basePath for GitHub Pages
+function useBasePath() {
+  const [basePath, setBasePath] = useState("");
+  useEffect(() => {
+    if (typeof window !== "undefined" && window.location.hostname.includes("github.io")) {
+      setBasePath("/mdx-vision-v2");
+    }
+  }, []);
+  return basePath;
+}
 
 const navigation = [
   { name: "Features", href: "#features" },
@@ -17,6 +25,7 @@ const navigation = [
 export default function HeaderDark() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const basePath = useBasePath();
 
   useEffect(() => {
     const handleScroll = () => {
