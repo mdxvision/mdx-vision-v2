@@ -1,23 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
 
-// Get basePath for GitHub Pages - check immediately on client
-function getBasePath() {
-  if (typeof window !== "undefined" && window.location.hostname.includes("github.io")) {
-    return "/mdx-vision-v2";
-  }
-  return "";
-}
-
-function useBasePath() {
-  const [basePath, setBasePath] = useState(getBasePath);
-  useEffect(() => {
-    setBasePath(getBasePath());
-  }, []);
-  return basePath;
-}
+// Get basePath from environment variable (set at build time)
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
 interface Partner {
   name: string;
@@ -56,8 +42,6 @@ const partners: Partner[] = [
 ];
 
 export default function HardwarePartners() {
-  const basePath = useBasePath();
-
   return (
     <section
       className="py-20 md:py-32 bg-dark-950 relative overflow-hidden"

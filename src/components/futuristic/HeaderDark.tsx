@@ -4,21 +4,8 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 
-// Get basePath for GitHub Pages - check immediately on client
-function getBasePath() {
-  if (typeof window !== "undefined" && window.location.hostname.includes("github.io")) {
-    return "/mdx-vision-v2";
-  }
-  return "";
-}
-
-function useBasePath() {
-  const [basePath, setBasePath] = useState(getBasePath);
-  useEffect(() => {
-    setBasePath(getBasePath());
-  }, []);
-  return basePath;
-}
+// Get basePath from environment variable (set at build time)
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
 const navigation = [
   { name: "Features", href: "#features" },
@@ -30,7 +17,6 @@ const navigation = [
 export default function HeaderDark() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const basePath = useBasePath();
 
   useEffect(() => {
     const handleScroll = () => {

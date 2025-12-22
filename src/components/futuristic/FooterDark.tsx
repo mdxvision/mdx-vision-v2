@@ -1,23 +1,9 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useState } from "react";
 
-// Get basePath for GitHub Pages - check immediately on client
-function getBasePath() {
-  if (typeof window !== "undefined" && window.location.hostname.includes("github.io")) {
-    return "/mdx-vision-v2";
-  }
-  return "";
-}
-
-function useBasePath() {
-  const [basePath, setBasePath] = useState(getBasePath);
-  useEffect(() => {
-    setBasePath(getBasePath());
-  }, []);
-  return basePath;
-}
+// Get basePath from environment variable (set at build time)
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
 const footerLinks = {
   product: [
@@ -41,8 +27,6 @@ const footerLinks = {
 };
 
 export default function FooterDark() {
-  const basePath = useBasePath();
-
   return (
     <footer
       className="bg-dark-950 border-t border-glass-border"
