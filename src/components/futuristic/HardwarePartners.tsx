@@ -2,6 +2,9 @@
 
 import { motion } from "framer-motion";
 
+// Get basePath for GitHub Pages deployment
+const basePath = process.env.NODE_ENV === "production" ? "/mdx-vision-v2" : "";
+
 interface Partner {
   name: string;
   logo: string | null;
@@ -138,13 +141,13 @@ export default function HardwarePartners() {
                     ) : partner.isOwn ? (
                       // MDX own hardware - white logo centered
                       <img
-                        src="/logos/mdx-logo-white.png"
+                        src={`${basePath}/logos/mdx-logo-white.png`}
                         alt="MDX Glasses"
                         className="h-8 w-auto mx-auto block"
                       />
                     ) : partner.logo ? (
                       <img
-                        src={partner.logo}
+                        src={`${basePath}${partner.logo}`}
                         alt={partner.name}
                         className="h-7 w-auto object-contain mx-auto"
                         style={{ filter: "brightness(0) invert(1)" }}

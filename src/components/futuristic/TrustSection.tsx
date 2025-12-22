@@ -2,6 +2,9 @@
 
 import { motion } from "framer-motion";
 
+// Get basePath for GitHub Pages deployment
+const basePath = process.env.NODE_ENV === "production" ? "/mdx-vision-v2" : "";
+
 const certifications = [
   {
     name: "HIPAA Compliant",
@@ -48,13 +51,13 @@ const integrations = [
   { name: "MEDITECH", logo: "/logos/integrations/meditech.svg" },
   { name: "athenahealth", logo: "/logos/integrations/athenahealth.svg" },
   { name: "eClinicalWorks", logo: "/logos/integrations/eclinicalworks.svg" },
-  { name: "TWS", logo: "/logos/integrations/tws.svg" },
-  { name: "PHC", logo: "/logos/integrations/phc.svg" },
 ];
 
 const partners = [
   { name: "Nuance", logo: "/logos/integrations/nuance.svg" },
   { name: "JBI", logo: "/logos/integrations/jbi.svg" },
+  { name: "TWS", logo: "/logos/integrations/tws.svg" },
+  { name: "PHC", logo: "/logos/integrations/phc.svg" },
 ];
 
 const stats = [
@@ -148,7 +151,7 @@ export default function TrustSection() {
                 className="px-8 py-4 rounded-xl glass border border-glass-border hover:border-glow-cyan/50 transition-colors"
               >
                 <img
-                  src={ehr.logo}
+                  src={`${basePath}${ehr.logo}`}
                   alt={ehr.name}
                   className="h-10 w-auto min-w-[100px] object-contain"
                 />
@@ -174,7 +177,7 @@ export default function TrustSection() {
                 className="px-6 py-3 rounded-lg glass border border-glass-border hover:border-glow-purple/50 transition-colors"
               >
                 <img
-                  src={partner.logo}
+                  src={`${basePath}${partner.logo}`}
                   alt={partner.name}
                   className="h-6 w-auto min-w-[80px] object-contain"
                 />

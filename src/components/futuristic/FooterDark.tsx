@@ -1,5 +1,8 @@
 import Link from "next/link";
 
+// Get basePath for GitHub Pages deployment
+const basePath = process.env.NODE_ENV === "production" ? "/mdx-vision-v2" : "";
+
 const footerLinks = {
   product: [
     { name: "Features", href: "#features" },
@@ -34,7 +37,7 @@ export default function FooterDark() {
           <div className="lg:col-span-2">
             <Link href="/v2" aria-label="MDX Vision - Home">
               <img
-                src="/logos/mdx-logo-white.png"
+                src={`${basePath}/logos/mdx-logo-white.png`}
                 alt="MDX Vision"
                 className="h-8 w-auto"
               />
