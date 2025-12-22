@@ -42,7 +42,19 @@ const certifications = [
   },
 ];
 
-const integrations = ["Epic", "Cerner", "Veradigm", "Meditech", "Athenahealth", "eClinicalWorks"];
+const integrations = [
+  { name: "Epic", logo: "/logos/integrations/epic.svg" },
+  { name: "Cerner", logo: "/logos/integrations/cerner.svg" },
+  { name: "Veradigm", logo: "/logos/integrations/veradigm.svg" },
+  { name: "MEDITECH", logo: "/logos/integrations/meditech.svg" },
+  { name: "athenahealth", logo: "/logos/integrations/athenahealth.svg" },
+  { name: "eClinicalWorks", logo: "/logos/integrations/eclinicalworks.svg" },
+];
+
+const partners = [
+  { name: "Nuance", logo: "/logos/integrations/nuance.svg" },
+  { name: "JBI", logo: "/logos/integrations/jbi.svg" },
+];
 
 const stats = [
   { value: "10M+", label: "Patient encounters documented" },
@@ -118,7 +130,35 @@ export default function TrustSection() {
           ))}
         </motion.div>
 
-        {/* Integrations */}
+        {/* Partners */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mb-16"
+        >
+          <p className="text-secondary mb-8">
+            Strategic technology partners
+          </p>
+          <div className="flex flex-wrap justify-center items-center gap-12">
+            {partners.map((partner) => (
+              <div
+                key={partner.name}
+                className="px-8 py-4 rounded-xl glass border border-glass-border hover:border-glow-purple/50 transition-colors"
+              >
+                <Image
+                  src={partner.logo}
+                  alt={partner.name}
+                  width={120}
+                  height={40}
+                  className="h-8 w-auto"
+                />
+              </div>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* EHR Integrations */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -128,13 +168,19 @@ export default function TrustSection() {
           <p className="text-secondary mb-8">
             Seamlessly integrates with leading EHR platforms
           </p>
-          <div className="flex flex-wrap justify-center gap-6">
-            {integrations.map((name) => (
+          <div className="flex flex-wrap justify-center items-center gap-8">
+            {integrations.map((ehr) => (
               <div
-                key={name}
-                className="px-6 py-3 rounded-xl glass border border-glass-border text-secondary font-medium hover:text-white hover:border-glow-cyan/50 transition-colors"
+                key={ehr.name}
+                className="px-6 py-3 rounded-xl glass border border-glass-border hover:border-glow-cyan/50 transition-colors"
               >
-                {name}
+                <Image
+                  src={ehr.logo}
+                  alt={ehr.name}
+                  width={140}
+                  height={40}
+                  className="h-6 w-auto"
+                />
               </div>
             ))}
           </div>
