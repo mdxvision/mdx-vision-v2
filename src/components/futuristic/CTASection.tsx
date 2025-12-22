@@ -43,7 +43,7 @@ export default function CTASection() {
             className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 text-center"
           >
             Ready to Transform Your{" "}
-            <span className="bg-gradient-to-r from-glow-purple via-glow-blue to-glow-cyan bg-clip-text text-transparent">
+            <span className="gradient-text">
               Practice?
             </span>
           </h2>

@@ -100,6 +100,21 @@ body {
   --tw-gradient-from: var(--glow-cyan);
 }
 
+/* Gradient text - explicit classes that work in production */
+.gradient-text {
+  background: linear-gradient(to right, var(--glow-purple), var(--glow-blue), var(--glow-cyan));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text-cyan {
+  background: linear-gradient(to right, var(--glow-cyan), var(--glow-blue));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
 /* Glassmorphism */
 .glass {
   background: var(--glass-white);

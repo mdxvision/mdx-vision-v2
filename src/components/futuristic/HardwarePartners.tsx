@@ -80,7 +80,7 @@ export default function HardwarePartners() {
             className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 text-center"
           >
             Platform{" "}
-            <span className="bg-gradient-to-r from-glow-purple via-glow-blue to-glow-cyan bg-clip-text text-transparent">
+            <span className="gradient-text">
               Agnostic
             </span>
           </h2>
@@ -149,9 +149,9 @@ export default function HardwarePartners() {
                       <Image
                         src={partner.logo}
                         alt={partner.name}
-                        width={140}
-                        height={56}
-                        className="h-14 w-auto object-contain"
+                        width={100}
+                        height={28}
+                        className="h-7 w-auto object-contain mx-auto"
                         style={{ filter: "brightness(0) invert(1)" }}
                       />
                     ) : (

@@ -71,7 +71,7 @@ export default function TrustSection() {
             className="text-3xl md:text-4xl lg:text-5xl font-bold text-white text-center"
           >
             Built on{" "}
-            <span className="bg-gradient-to-r from-glow-cyan to-glow-blue bg-clip-text text-transparent">
+            <span className="gradient-text-cyan">
               Trust
             </span>
           </h2>

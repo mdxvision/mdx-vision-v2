@@ -89,7 +89,7 @@ export default function HeroFuturistic() {
               >
                 <span className="text-white">Speak naturally.</span>
                 <br />
-                <span className="bg-gradient-to-r from-glow-purple via-glow-blue to-glow-cyan bg-clip-text text-transparent">
+                <span className="gradient-text">
                   Watch it happen.
                 </span>
               </h1>

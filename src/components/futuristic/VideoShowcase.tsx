@@ -63,7 +63,7 @@ export default function VideoShowcase() {
             className="text-3xl md:text-4xl lg:text-5xl font-bold text-white text-center mx-auto"
           >
             Experience the{" "}
-            <span className="bg-gradient-to-r from-glow-purple via-glow-blue to-glow-cyan bg-clip-text text-transparent">
+            <span className="gradient-text">
               Future
             </span>
           </h2>

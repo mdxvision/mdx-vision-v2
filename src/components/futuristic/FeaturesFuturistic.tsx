@@ -84,7 +84,7 @@ export default function FeaturesFuturistic() {
             className="text-3xl md:text-4xl lg:text-5xl font-bold text-white text-center"
           >
             Everything You Need,{" "}
-            <span className="bg-gradient-to-r from-glow-purple via-glow-blue to-glow-cyan bg-clip-text text-transparent">
+            <span className="gradient-text">
               Nothing You Don&apos;t
             </span>
           </h2>
