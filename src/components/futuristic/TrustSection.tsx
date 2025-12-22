@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
 
 const certifications = [
   {
@@ -49,6 +48,8 @@ const integrations = [
   { name: "MEDITECH", logo: "/logos/integrations/meditech.svg" },
   { name: "athenahealth", logo: "/logos/integrations/athenahealth.svg" },
   { name: "eClinicalWorks", logo: "/logos/integrations/eclinicalworks.svg" },
+  { name: "TWS", logo: "/logos/integrations/tws.svg" },
+  { name: "PHC", logo: "/logos/integrations/phc.svg" },
 ];
 
 const partners = [
@@ -130,56 +131,52 @@ export default function TrustSection() {
           ))}
         </motion.div>
 
-        {/* Partners */}
+        {/* EHR Integrations - Above partners, bigger */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <p className="text-secondary mb-8">
-            Strategic technology partners
+          <p className="text-secondary mb-8 text-lg">
+            Seamlessly integrates with leading EHR platforms
           </p>
-          <div className="flex flex-wrap justify-center items-center gap-12">
-            {partners.map((partner) => (
+          <div className="flex flex-wrap justify-center items-center gap-6">
+            {integrations.map((ehr) => (
               <div
-                key={partner.name}
-                className="px-8 py-4 rounded-xl glass border border-glass-border hover:border-glow-purple/50 transition-colors"
+                key={ehr.name}
+                className="px-8 py-4 rounded-xl glass border border-glass-border hover:border-glow-cyan/50 transition-colors"
               >
-                <Image
-                  src={partner.logo}
-                  alt={partner.name}
-                  width={120}
-                  height={40}
-                  className="h-8 w-auto"
+                <img
+                  src={ehr.logo}
+                  alt={ehr.name}
+                  className="h-10 w-auto min-w-[100px] object-contain"
                 />
               </div>
             ))}
           </div>
         </motion.div>
 
-        {/* EHR Integrations */}
+        {/* Partners - Below integrations, smaller */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className="text-center"
         >
-          <p className="text-secondary mb-8">
-            Seamlessly integrates with leading EHR platforms
+          <p className="text-secondary mb-6 text-sm">
+            Strategic technology partners
           </p>
           <div className="flex flex-wrap justify-center items-center gap-8">
-            {integrations.map((ehr) => (
+            {partners.map((partner) => (
               <div
-                key={ehr.name}
-                className="px-6 py-3 rounded-xl glass border border-glass-border hover:border-glow-cyan/50 transition-colors"
+                key={partner.name}
+                className="px-6 py-3 rounded-lg glass border border-glass-border hover:border-glow-purple/50 transition-colors"
               >
-                <Image
-                  src={ehr.logo}
-                  alt={ehr.name}
-                  width={140}
-                  height={40}
-                  className="h-6 w-auto"
+                <img
+                  src={partner.logo}
+                  alt={partner.name}
+                  className="h-6 w-auto min-w-[80px] object-contain"
                 />
               </div>
             ))}

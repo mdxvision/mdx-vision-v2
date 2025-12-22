@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
 
 interface Partner {
   name: string;
@@ -138,19 +137,15 @@ export default function HardwarePartners() {
                       </div>
                     ) : partner.isOwn ? (
                       // MDX own hardware - white logo centered
-                      <Image
+                      <img
                         src="/logos/mdx-logo-white.png"
                         alt="MDX Glasses"
-                        width={120}
-                        height={32}
                         className="h-8 w-auto mx-auto block"
                       />
                     ) : partner.logo ? (
-                      <Image
+                      <img
                         src={partner.logo}
                         alt={partner.name}
-                        width={100}
-                        height={28}
                         className="h-7 w-auto object-contain mx-auto"
                         style={{ filter: "brightness(0) invert(1)" }}
                       />

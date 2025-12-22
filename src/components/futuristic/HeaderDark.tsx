@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 
 const navigation = [
@@ -39,13 +38,10 @@ export default function HeaderDark() {
       >
         {/* Logo */}
         <Link href="/v2" className="relative z-10" aria-label="MDX Vision - Home">
-          <Image
+          <img
             src="/logos/mdx-logo-white.png"
             alt="MDX Vision"
-            width={120}
-            height={32}
             className="h-8 w-auto"
-            priority
           />
         </Link>
 

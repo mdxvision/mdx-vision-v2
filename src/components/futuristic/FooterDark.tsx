@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 
 const footerLinks = {
   product: [
@@ -34,11 +33,9 @@ export default function FooterDark() {
           {/* Brand */}
           <div className="lg:col-span-2">
             <Link href="/v2" aria-label="MDX Vision - Home">
-              <Image
+              <img
                 src="/logos/mdx-logo-white.png"
                 alt="MDX Vision"
-                width={120}
-                height={32}
                 className="h-8 w-auto"
               />
             </Link>
