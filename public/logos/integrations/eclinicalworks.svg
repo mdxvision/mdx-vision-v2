@@ -1,3 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 40">
-  <text x="90" y="28" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white" text-anchor="middle">eClinicalWorks</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 50">
+  <rect x="5" y="10" width="170" height="30" rx="4" fill="#E31837" opacity="0.15"/>
+  <text x="90" y="32" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#E31837" text-anchor="middle">eClinicalWorks</text>
 </svg>

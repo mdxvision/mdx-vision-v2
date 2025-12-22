@@ -5,16 +5,10 @@ import { VideoEmbed } from "@/components/video";
 
 const videos = [
   {
-    videoId: "_A2V4Z6FTTQ",
-    title: "MDX Vision Overview",
+    videoId: "Lqsi7YR5PrQ",
+    title: "MDX Vision Demo",
     description: "See how MDX Vision transforms clinical documentation",
   },
-  // Add EMT video here once uploaded to YouTube:
-  // {
-  //   videoId: "YOUR_VIDEO_ID",
-  //   title: "EMT Workflow Demo",
-  //   description: "Real-world EMT workflow powered by MDX technology",
-  // },
 ];
 
 export default function VideoShowcase() {
