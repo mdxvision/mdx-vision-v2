@@ -4,13 +4,18 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 
-// Helper hook to get basePath for GitHub Pages
+// Get basePath for GitHub Pages - check immediately on client
+function getBasePath() {
+  if (typeof window !== "undefined" && window.location.hostname.includes("github.io")) {
+    return "/mdx-vision-v2";
+  }
+  return "";
+}
+
 function useBasePath() {
-  const [basePath, setBasePath] = useState("");
+  const [basePath, setBasePath] = useState(getBasePath);
   useEffect(() => {
-    if (typeof window !== "undefined" && window.location.hostname.includes("github.io")) {
-      setBasePath("/mdx-vision-v2");
-    }
+    setBasePath(getBasePath());
   }, []);
   return basePath;
 }
