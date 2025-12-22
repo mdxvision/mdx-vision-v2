@@ -19,10 +19,10 @@ const footerLinks = {
     { name: "Contact", href: "#contact" },
   ],
   legal: [
-    { name: "Privacy Policy", href: "/privacy" },
-    { name: "Terms of Service", href: "/terms" },
-    { name: "HIPAA Compliance", href: "/hipaa" },
-    { name: "Security", href: "/security" },
+    { name: "Privacy Policy", href: "/v2/privacy" },
+    { name: "Terms of Service", href: "/v2/terms" },
+    { name: "HIPAA Compliance", href: "/v2/hipaa" },
+    { name: "Security", href: "/v2/security" },
   ],
 };
 
