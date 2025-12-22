@@ -1,0 +1,10 @@
+export { default as HeaderDark } from "./HeaderDark";
+export { default as HeroFuturistic } from "./HeroFuturistic";
+export { default as VoiceWaveform, WaveformIcon } from "./VoiceWaveform";
+export { default as GlassCard, StatCard } from "./GlassCard";
+export { default as VideoShowcase } from "./VideoShowcase";
+export { default as FeaturesFuturistic } from "./FeaturesFuturistic";
+export { default as HardwarePartners } from "./HardwarePartners";
+export { default as TrustSection } from "./TrustSection";
+export { default as CTASection } from "./CTASection";
+export { default as FooterDark } from "./FooterDark";

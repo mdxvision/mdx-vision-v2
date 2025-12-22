@@ -1,0 +1,264 @@
+/* Futuristic Theme - MDX Vision V2 */
+
+/* Override base colors for dark theme */
+:root {
+  /* Dark Background Scale */
+  --dark-950: #030712;
+  --dark-900: #0a0f1a;
+  --dark-800: #111827;
+  --dark-700: #1f2937;
+  --dark-600: #374151;
+
+  /* Glow Colors - Brand Palette */
+  --glow-purple: #8b5cf6;
+  --glow-blue: #3b82f6;
+  --glow-cyan: #00d4ff;
+  --glow-teal: #14b8a6;
+
+  /* Glass Colors */
+  --glass-white: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-highlight: rgba(255, 255, 255, 0.15);
+}
+
+/* Base styles for dark theme */
+.dark body,
+body {
+  background-color: var(--dark-950);
+  color: #f9fafb;
+}
+
+/* Text color utilities */
+.text-primary {
+  color: #f9fafb;
+}
+
+.text-secondary {
+  color: #9ca3af;
+}
+
+.text-muted {
+  color: #6b7280;
+}
+
+/* Background utilities */
+.bg-dark-950 {
+  background-color: var(--dark-950);
+}
+
+.bg-dark-900 {
+  background-color: var(--dark-900);
+}
+
+.bg-dark-800 {
+  background-color: var(--dark-800);
+}
+
+/* Glow color utilities */
+.text-glow-cyan {
+  color: var(--glow-cyan);
+}
+
+.text-glow-purple {
+  color: var(--glow-purple);
+}
+
+.text-glow-blue {
+  color: var(--glow-blue);
+}
+
+.bg-glow-cyan {
+  background-color: var(--glow-cyan);
+}
+
+.bg-glow-purple {
+  background-color: var(--glow-purple);
+}
+
+.bg-glow-blue {
+  background-color: var(--glow-blue);
+}
+
+/* Gradient utilities */
+.from-glow-purple {
+  --tw-gradient-from: var(--glow-purple);
+}
+
+.via-glow-blue {
+  --tw-gradient-via: var(--glow-blue);
+}
+
+.to-glow-cyan {
+  --tw-gradient-to: var(--glow-cyan);
+}
+
+.to-glow-blue {
+  --tw-gradient-to: var(--glow-blue);
+}
+
+.from-glow-cyan {
+  --tw-gradient-from: var(--glow-cyan);
+}
+
+/* Glassmorphism */
+.glass {
+  background: var(--glass-white);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+}
+
+.glass-strong {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-highlight);
+}
+
+.bg-glass-white {
+  background: var(--glass-white);
+}
+
+.bg-glass-highlight {
+  background: var(--glass-highlight);
+}
+
+.border-glass-border {
+  border-color: var(--glass-border);
+}
+
+/* Glow box-shadow effects */
+.glow-cyan {
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.3), 0 0 40px rgba(0, 212, 255, 0.1);
+}
+
+.glow-purple {
+  box-shadow: 0 0 20px rgba(139, 92, 246, 0.3), 0 0 40px rgba(139, 92, 246, 0.1);
+}
+
+.glow-blue {
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.3), 0 0 40px rgba(59, 130, 246, 0.1);
+}
+
+/* Text glow effects */
+.text-shadow-cyan {
+  text-shadow: 0 0 20px rgba(0, 212, 255, 0.5), 0 0 40px rgba(0, 212, 255, 0.3);
+}
+
+.text-shadow-purple {
+  text-shadow: 0 0 20px rgba(139, 92, 246, 0.5), 0 0 40px rgba(139, 92, 246, 0.3);
+}
+
+/* Grain texture overlay */
+.grain {
+  position: relative;
+}
+
+.grain::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%' height='100%' filter='url(%23noise)'/%3E%3C/svg%3E");
+  opacity: 0.03;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Animated gradient background */
+.animated-gradient {
+  background: linear-gradient(
+    -45deg,
+    var(--dark-950),
+    var(--dark-900),
+    #0f172a,
+    var(--dark-950)
+  );
+  background-size: 400% 400%;
+  animation: gradient-shift 15s ease infinite;
+}
+
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Grid background */
+.grid-bg {
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0.03) 1px,
+      transparent 1px
+    ),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+
+/* Radial glow backgrounds */
+.radial-glow-purple {
+  background: radial-gradient(
+    ellipse at center,
+    rgba(139, 92, 246, 0.15) 0%,
+    transparent 70%
+  );
+}
+
+.radial-glow-cyan {
+  background: radial-gradient(
+    ellipse at center,
+    rgba(0, 212, 255, 0.15) 0%,
+    transparent 70%
+  );
+}
+
+.radial-glow-blue {
+  background: radial-gradient(
+    ellipse at center,
+    rgba(59, 130, 246, 0.15) 0%,
+    transparent 70%
+  );
+}
+
+/* Floating animation */
+.float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+/* Custom scrollbar for dark theme */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--dark-950);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--dark-600);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #4b5563;
+}
+
+/* Selection color */
+::selection {
+  background: rgba(0, 212, 255, 0.3);
+  color: white;
+}

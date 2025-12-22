@@ -1,26 +1,94 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  /* Brand Colors - WCAG AA compliant */
+  --color-primary-50: #e6f3fb;
+  --color-primary-100: #cce7f7;
+  --color-primary-200: #99cfef;
+  --color-primary-300: #66b7e7;
+  --color-primary-400: #339fdf;
+  --color-primary-500: #0087d7;
+  --color-primary-600: #006cac;
+  --color-primary-700: #005181;
+  --color-primary-800: #003656;
+  --color-primary-900: #001b2b;
+
+  /* Neutral Colors */
+  --color-neutral-50: #fafafa;
+  --color-neutral-100: #f5f5f5;
+  --color-neutral-200: #e5e5e5;
+  --color-neutral-300: #d4d4d4;
+  --color-neutral-400: #a3a3a3;
+  --color-neutral-500: #737373;
+  --color-neutral-600: #525252;
+  --color-neutral-700: #404040;
+  --color-neutral-800: #262626;
+  --color-neutral-900: #171717;
+
+  /* Accent Colors */
+  --color-accent-teal: #0d9488;
+  --color-accent-green: #16a34a;
+
+  /* Fonts */
+  --font-sans: var(--font-inter), system-ui, sans-serif;
+
+  /* Spacing */
+  --spacing-section: 5rem;
+  --spacing-section-lg: 7rem;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+/* Focus styles for accessibility */
+@layer base {
+  *:focus-visible {
+    outline: 2px solid var(--color-primary-500);
+    outline-offset: 2px;
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply text-neutral-800 bg-white;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply text-neutral-900 font-semibold;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Utility classes */
+@layer utilities {
+  .section-padding {
+    @apply py-16 md:py-20 lg:py-24;
+  }
+
+  .container-default {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Ensure proper color contrast - WCAG AA */
+  .text-on-primary {
+    @apply text-white;
+  }
+
+  .text-on-dark {
+    @apply text-neutral-100;
+  }
+
+  /* Video container for responsive videos */
+  .video-container {
+    @apply relative w-full overflow-hidden rounded-xl;
+    aspect-ratio: 16 / 9;
+  }
+
+  .video-container video,
+  .video-container iframe {
+    @apply absolute top-0 left-0 w-full h-full object-cover;
+  }
 }
