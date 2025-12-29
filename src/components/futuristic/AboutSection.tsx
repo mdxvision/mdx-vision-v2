@@ -133,7 +133,7 @@ export default function AboutSection() {
             </div>
 
             {/* Stats */}
-            <div className="mt-8 grid grid-cols-3 gap-6">
+            <div className="mt-8 grid grid-cols-2 gap-6">
               <div>
                 <p className="text-2xl md:text-3xl font-bold text-white">
                   2016
@@ -141,14 +141,10 @@ export default function AboutSection() {
                 <p className="text-sm text-muted">Founded</p>
               </div>
               <div>
-                <p className="text-2xl md:text-3xl font-bold text-white">50+</p>
-                <p className="text-sm text-muted">Team Members</p>
-              </div>
-              <div>
                 <p className="text-2xl md:text-3xl font-bold text-white">
-                  1000+
+                  500+
                 </p>
-                <p className="text-sm text-muted">Providers</p>
+                <p className="text-sm text-muted">Languages</p>
               </div>
             </div>
           </motion.div>
