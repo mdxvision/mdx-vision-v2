@@ -40,6 +40,25 @@ const features = [
       </svg>
     ),
   },
+  {
+    title: "Voice-Activated Vitals",
+    description: "Speak vitals as you assess—BP, pulse, respiration, SpO2. MDX Vision timestamps and logs everything automatically to your ePCR.",
+    icon: (
+      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 18.75a6 6 0 006-6v-1.5m-6 7.5a6 6 0 01-6-6v-1.5m6 7.5v3.75m-3.75 0h7.5M12 15.75a3 3 0 01-3-3V4.5a3 3 0 116 0v8.25a3 3 0 01-3 3z" />
+      </svg>
+    ),
+  },
+  {
+    title: "Real-Time GPS Tracking",
+    description: "Dispatch sees your exact location. Hospitals track your ETA. Seamless coordination from scene to ER without radio check-ins.",
+    icon: (
+      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+      </svg>
+    ),
+  },
 ];
 
 const stats = [
@@ -166,7 +185,7 @@ export default function EMSPage() {
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {features.map((feature, index) => (
               <motion.div
                 key={feature.title}
@@ -183,6 +202,74 @@ export default function EMSPage() {
                 <p className="text-secondary">{feature.description}</p>
               </motion.div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* How It Works */}
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              How It Works on Scene
+            </h2>
+            <p className="text-lg text-secondary max-w-2xl mx-auto">
+              Three seamless phases. Patient care stays first.
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-center"
+            >
+              <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-glow-cyan/20 text-glow-cyan flex items-center justify-center text-2xl font-bold">
+                1
+              </div>
+              <h3 className="text-xl font-semibold text-white mb-3">Respond</h3>
+              <p className="text-secondary">
+                Dispatch info displays on arrival. Patient history from linked records. Protocols ready before you touch the patient.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="text-center"
+            >
+              <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-glow-cyan/20 text-glow-cyan flex items-center justify-center text-2xl font-bold">
+                2
+              </div>
+              <h3 className="text-xl font-semibold text-white mb-3">Treat</h3>
+              <p className="text-secondary">
+                Speak vitals and interventions as you work. Drug dosages overlay in AR. Everything timestamped and logged automatically.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="text-center"
+            >
+              <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-glow-cyan/20 text-glow-cyan flex items-center justify-center text-2xl font-bold">
+                3
+              </div>
+              <h3 className="text-xl font-semibold text-white mb-3">Handoff</h3>
+              <p className="text-secondary">
+                ePCR complete before arrival. Hospital receives patient data in transit. ED staff prepared. Seamless transfer of care.
+              </p>
+            </motion.div>
           </div>
         </div>
       </section>
