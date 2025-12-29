@@ -6,7 +6,34 @@
 
 **Founded:** 2016 by Rafael Rodriguez
 **Contact:** rafael@mdx.vision
-**Designer:** Edgar Zorrilla
+
+---
+
+## Team (from Investor Deck V4.0)
+
+### Leadership
+| Name | Role |
+|------|------|
+| Rafael Rodriguez | CEO & Founder |
+| Carlos Rosa | CTO |
+| Edgar Zorrilla | Design Director |
+
+### Board of Directors
+| Name | Role |
+|------|------|
+| Eboné Carrington | Advisory Board |
+| Kathryn Bass, MD | Advisory Board |
+| Bekim Mustafaj | Advisory Board |
+| Mohammad Ghazizadeh | Advisory Board |
+
+### Directors
+| Name | Role |
+|------|------|
+| Srinivas Kolla | Engineering Director |
+| Subrahmanyam Choppara | Engineering Director |
+| Henry Ghazi | Director |
+| Bikramjit Mathaun | Director |
+| Jean Zahore | Director |
 
 **Core Value Proposition:** Real-time, in-encounter data processing and feedback - filling the gap left by competitors (DAX, Augmedix, Suki AI) who only offer post-encounter analysis.
 
@@ -190,15 +217,14 @@ src/
 │   └── layout.tsx
 ├── components/
 │   └── futuristic/        # v2 components
-│       ├── HeaderDark.tsx
+│       ├── HeaderDark.tsx       # Includes Solutions dropdown
 │       ├── FooterDark.tsx
 │       ├── HeroFuturistic.tsx
 │       ├── FeaturesFuturistic.tsx
 │       ├── VideoShowcase.tsx
 │       ├── HardwarePartners.tsx
-│       ├── TrustSection.tsx
-│       ├── AboutSection.tsx
-│       ├── ComingSoonSection.tsx
+│       ├── TrustSection.tsx     # EHR integrations + partners
+│       ├── AboutSection.tsx     # Stats: Founded 2016, 500+ languages
 │       ├── CTASection.tsx
 │       ├── GlassCard.tsx
 │       └── VoiceWaveform.tsx
@@ -289,3 +315,86 @@ Working on v2 verticals (police, fire, ems, military) - improving to Apple/Deloi
 3. Professional imagery (product renders, lifestyle shots)
 4. More whitespace between sections
 5. Bespoke icon set
+
+---
+
+## Gap Analysis: Investor Deck vs Website (December 2025)
+
+### Corrected on Website (Previously Inaccurate)
+
+| Issue | Old Value | Corrected Value | Source |
+|-------|-----------|-----------------|--------|
+| Founding Year | 2019 | 2016 | User confirmation |
+| Languages Supported | 400+ (in deck) | 500+ | User confirmation |
+| Team Size | 50+ displayed | Removed (actual: 11) | Investor Deck V4.0 |
+| Provider Count | 1000+ | Removed (unverified) | User confirmation |
+| Dragon/Nuance Partnership | Displayed as partner | Removed | User: No partnership |
+
+### Removed from Website
+
+| Item | Reason |
+|------|--------|
+| Coming Soon Section | All verticals (Police, Fire, EMS, Military) are live |
+| Nuance/Dragon logos | No partnership exists |
+| "50+ Team Members" stat | Inaccurate - actual team is 11 people |
+| "1000+ Providers" stat | Unverified claim |
+
+### Website vs Deck Alignment Status
+
+| Element | Deck | Website | Status |
+|---------|------|---------|--------|
+| A.R.I.M. Technology | Patent Pending | Mentioned | ✅ Aligned |
+| Languages | 400+ | 500+ | ✅ Website more current |
+| Real-time processing | Core feature | Prominently featured | ✅ Aligned |
+| EHR Integrations | Epic, Cerner, etc. | All listed | ✅ Aligned |
+| Military Features | 9-Line Medevac, GPS | Full page | ✅ Aligned |
+| Team Page | 11 members | Not on website | ⚠️ Optional |
+| Thermal/Night Vision | Mentioned | Added to Military | ✅ Aligned |
+| Facial Recognition | Mentioned | Added to Military | ✅ Aligned |
+
+### Navigation Updates Made
+
+- Added **Solutions dropdown** to header with all verticals:
+  - Healthcare → /v2
+  - Police → /v2/verticals/police
+  - Fire → /v2/verticals/fire
+  - EMS → /v2/verticals/ems
+  - Military → /v2/verticals/military
+
+### Stats Currently Displayed
+
+**About Section:**
+- Founded: 2016 ✅
+- Languages: 500+ ✅
+
+**Trust Section:**
+- 10M+ Patient encounters (needs verification)
+- 99.9% Uptime SLA ✅
+- 256-bit AES encryption ✅
+- <50ms Response time ✅
+
+### Recommended Future Verifications
+
+1. **10M+ patient encounters** - Validate or remove
+2. **Partner logos** (JBI, TWS, PHC) - Confirm active partnerships
+3. **EHR integrations** - Confirm all are active (Epic, Cerner, Veradigm, MEDITECH, athenahealth, eClinicalWorks)
+4. **Certifications** - Verify current status (HIPAA, SOC 2, HITRUST, HL7 FHIR)
+
+---
+
+## Reference Files
+
+### Investor Decks (in datafiles folder)
+- `MDx Invester Deck- V4.0.pdf` - Contains team slide (page 16)
+- Various pitch materials in More MDx Content folder
+
+### Key Corrections Log
+
+| Date | Change | File |
+|------|--------|------|
+| Dec 2025 | Removed Nuance from partners | TrustSection.tsx |
+| Dec 2025 | Changed founding year 2019→2016 | AboutSection.tsx |
+| Dec 2025 | Removed "50+ Team" and "1000+ Providers" stats | AboutSection.tsx |
+| Dec 2025 | Removed Coming Soon section | v2/page.tsx |
+| Dec 2025 | Added Solutions dropdown with verticals | HeaderDark.tsx |
+| Dec 2025 | Added "How It Works" sections to EMS/Military | verticals/*.tsx |
