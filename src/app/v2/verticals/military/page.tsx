@@ -5,17 +5,8 @@ import Link from "next/link";
 
 const features = [
   {
-    title: "After-Action Reports",
-    description: "Voice-capture mission debriefs in real-time. Structured AARs generated automatically while details are fresh.",
-    icon: (
-      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
-      </svg>
-    ),
-  },
-  {
-    title: "Tactical Casualty Care",
-    description: "TCCC documentation without taking hands off the patient. Voice-log interventions, vitals, and evacuation status.",
+    title: "9-Line Medevac Automation",
+    description: "Voice-generate 9-Line Medevac requests instantly. Structured format auto-populates with GPS coordinates, patient status, and security at pickup site.",
     icon: (
       <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
@@ -23,17 +14,8 @@ const features = [
     ),
   },
   {
-    title: "Multi-Language Operations",
-    description: "Real-time translation for HUMINT collection, civil affairs, and coalition operations. 500+ languages, no interpreter needed.",
-    icon: (
-      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10.5 21l5.25-11.25L21 21m-9-3h7.5M3 5.621a48.474 48.474 0 016-.371m0 0c1.12 0 2.233.038 3.334.114M9 5.25V3m3.334 2.364C11.176 10.658 7.69 15.08 3 17.502m9.334-12.138c.896.061 1.785.147 2.666.257m-4.589 8.495a18.023 18.023 0 01-3.827-5.802" />
-      </svg>
-    ),
-  },
-  {
-    title: "Secure AR Overlay",
-    description: "Encrypted heads-up display for mission data, blue force tracking, and operational intel. See the battlefield, not a screen.",
+    title: "Thermal & Night Vision",
+    description: "Integrated thermal imaging and night vision overlay. See heat signatures, identify threats, and operate in zero-visibility conditions.",
     icon: (
       <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
@@ -41,12 +23,49 @@ const features = [
       </svg>
     ),
   },
+  {
+    title: "Blue Force Tracking",
+    description: "Real-time GPS tracking of all friendly units. Know exactly where your team is at all times. Encrypted position data shared across command.",
+    icon: (
+      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+      </svg>
+    ),
+  },
+  {
+    title: "500+ Language Translation",
+    description: "Real-time translation for HUMINT collection, civil affairs, and coalition operations. Communicate with locals and allies without interpreters.",
+    icon: (
+      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10.5 21l5.25-11.25L21 21m-9-3h7.5M3 5.621a48.474 48.474 0 016-.371m0 0c1.12 0 2.233.038 3.334.114M9 5.25V3m3.334 2.364C11.176 10.658 7.69 15.08 3 17.502m9.334-12.138c.896.061 1.785.147 2.666.257m-4.589 8.495a18.023 18.023 0 01-3.827-5.802" />
+      </svg>
+    ),
+  },
+  {
+    title: "Offline Operation",
+    description: "Full functionality without connectivity. Mesh networking between units. Data syncs automatically when connection is restored.",
+    icon: (
+      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 3l8.735 8.735m0 0a.374.374 0 11.53.53m-.53-.53l.53.53m0 0L21 21M14.652 9.348a3.75 3.75 0 010 5.304m2.121-7.425a6.75 6.75 0 010 9.546m2.121-11.667c3.808 3.807 3.808 9.98 0 13.788m-9.546-4.242a3.733 3.733 0 01-1.06-2.122m-1.061 4.243a6.75 6.75 0 01-1.625-6.929m-.496 9.05c-3.068-3.067-3.664-7.67-1.79-11.334M12 12h.008v.008H12V12z" />
+      </svg>
+    ),
+  },
+  {
+    title: "Facial Recognition",
+    description: "Identify persons of interest in real-time. Cross-reference against databases instantly. Critical for checkpoint operations and HVT identification.",
+    icon: (
+      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+      </svg>
+    ),
+  },
 ];
 
 const stats = [
-  { value: "Zero", label: "Hands required" },
+  { value: "9-Line", label: "Auto Medevac" },
+  { value: "Thermal", label: "Night vision" },
   { value: "E2E", label: "Encrypted" },
-  { value: "MIL-SPEC", label: "Rugged" },
   { value: "Offline", label: "Capable" },
 ];
 
@@ -91,8 +110,9 @@ export default function MilitaryPage() {
               <span className="text-green-400">Paperwork Never</span>
             </h1>
             <p className="text-xl text-secondary mb-8">
-              MDX Vision brings hands-free documentation to the warfighter.
-              Maintain tactical awareness while reports write themselves.
+              9-Line Medevac in seconds. Thermal and night vision overlay. Blue force
+              tracking across your unit. Facial recognition at checkpoints. Full offline
+              capability. E2E encrypted. 100% hands-free.
             </p>
 
             <div className="flex flex-wrap gap-4">
@@ -167,7 +187,7 @@ export default function MilitaryPage() {
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {features.map((feature, index) => (
               <motion.div
                 key={feature.title}
@@ -184,6 +204,74 @@ export default function MilitaryPage() {
                 <p className="text-secondary">{feature.description}</p>
               </motion.div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* How It Works */}
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              How It Works in Combat
+            </h2>
+            <p className="text-lg text-secondary max-w-2xl mx-auto">
+              Three seamless phases. Zero distraction from your mission.
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-center"
+            >
+              <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-green-500/20 text-green-400 flex items-center justify-center text-2xl font-bold">
+                1
+              </div>
+              <h3 className="text-xl font-semibold text-white mb-3">Engage</h3>
+              <p className="text-secondary">
+                Thermal and night vision activates automatically. Facial recognition scans. Blue force positions update in real-time.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="text-center"
+            >
+              <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-green-500/20 text-green-400 flex items-center justify-center text-2xl font-bold">
+                2
+              </div>
+              <h3 className="text-xl font-semibold text-white mb-3">Communicate</h3>
+              <p className="text-secondary">
+                Voice-generate 9-Line Medevac. Real-time translation in 500+ languages. E2E encrypted transmission to command.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="text-center"
+            >
+              <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-green-500/20 text-green-400 flex items-center justify-center text-2xl font-bold">
+                3
+              </div>
+              <h3 className="text-xl font-semibold text-white mb-3">Execute</h3>
+              <p className="text-secondary">
+                All intel captured and documented. Syncs when connectivity restores. Mission data ready for debrief.
+              </p>
+            </motion.div>
           </div>
         </div>
       </section>
