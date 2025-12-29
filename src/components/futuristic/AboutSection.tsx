@@ -136,7 +136,7 @@ export default function AboutSection() {
             <div className="mt-8 grid grid-cols-3 gap-6">
               <div>
                 <p className="text-2xl md:text-3xl font-bold text-white">
-                  2019
+                  2016
                 </p>
                 <p className="text-sm text-muted">Founded</p>
               </div>
