@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autonomous Development System - Documentation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.6;
+            color: #1a1a2e;
+            background: linear-gradient(135deg, #0a0a0f 0%, #1a1a2e 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        /* Header */
+        .header {
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 20px;
+            margin-bottom: 40px;
+            box-shadow: 0 20px 60px rgba(102, 126, 234, 0.3);
+        }
+        
+        .header h1 {
+            font-size: 3rem;
+            color: white;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+        
+        .header .subtitle {
+            font-size: 1.3rem;
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 20px;
+        }
+        
+        .header .version {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 8px 20px;
+            border-radius: 50px;
+            color: white;
+            font-weight: 600;
+        }
+        
+        /* Cards */
+        .card {
+            background: white;
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+        
+        .card h2 {
+            font-size: 1.8rem;
+            color: #1a1a2e;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #667eea;
+        }
+        
+        .card h3 {
+            font-size: 1.3rem;
+            color: #333;
+            margin: 25px 0 15px 0;
+        }
+        
+        /* System Overview Grid */
+        .system-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+        
+        .system-component {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ec 100%);
+            border-radius: 12px;
+            padding: 25px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .system-component.builder {
+            border-left-color: #10b981;
+        }
+        
+        .system-component.qa {
+            border-left-color: #f59e0b;
+        }
+        
+        .system-component h4 {
+            font-size: 1.2rem;
+            color: #1a1a2e;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .system-component p {
+            color: #555;
+            font-size: 0.95rem;
+        }
+        
+        .system-component .file-name {
+            display: inline-block;
+            background: #1a1a2e;
+            color: #10b981;
+            padding: 4px 12px;
+            border-radius: 6px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.85rem;
+            margin-top: 10px;
+        }
+        
+        /* Workflow Section */
+        .workflow {
+            background: #f8fafc;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 20px 0;
+        }
+        
+        .workflow-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #667eea;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .workflow-steps {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            align-items: center;
+        }
+        
+        .workflow-step {
+            background: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-weight: 500;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .workflow-step .number {
+            background: #667eea;
+            color: white;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+        }
+        
+        .workflow-arrow {
+            color: #667eea;
+            font-size: 1.5rem;
+        }
+        
+        /* Code blocks */
+        .code-block {
+            background: #1a1a2e;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+        
+        .code-block code {
+            color: #10b981;
+            font-family: 'Courier New', Consolas, monospace;
+            font-size: 0.9rem;
+            line-height: 1.8;
+        }
+        
+        .code-block .comment {
+            color: #6b7280;
+        }
+        
+        /* Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        
+        th {
+            background: #f8fafc;
+            font-weight: 600;
+            color: #1a1a2e;
+        }
+        
+        tr:hover {
+            background: #f8fafc;
+        }
+        
+        /* Use Case Cards */
+        .use-cases {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+        }
+        
+        .use-case {
+            background: white;
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .use-case:hover {
+            border-color: #667eea;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.15);
+        }
+        
+        .use-case h4 {
+            color: #1a1a2e;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+        
+        .use-case p {
+            color: #6b7280;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+        
+        .use-case .prompt-badge {
+            display: inline-block;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .use-case .prompt-badge.builder {
+            background: #d1fae5;
+            color: #059669;
+        }
+        
+        .use-case .prompt-badge.qa {
+            background: #fef3c7;
+            color: #d97706;
+        }
+        
+        /* Specialists Grid */
+        .specialists {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .specialist {
+            text-align: center;
+            padding: 20px 15px;
+            background: #f8fafc;
+            border-radius: 10px;
+        }
+        
+        .specialist .icon {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+        
+        .specialist .name {
+            font-weight: 600;
+            color: #1a1a2e;
+            font-size: 0.9rem;
+        }
+        
+        /* Features List */
+        .features-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .features-list li {
+            padding: 12px 0;
+            padding-left: 35px;
+            position: relative;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        .features-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #10b981;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        /* Alert Box */
+        .alert {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border-left: 4px solid #f59e0b;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        
+        .alert-title {
+            font-weight: 700;
+            color: #92400e;
+            margin-bottom: 8px;
+        }
+        
+        .alert p {
+            color: #78350f;
+            font-size: 0.95rem;
+        }
+        
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: rgba(255,255,255,0.6);
+            font-size: 0.9rem;
+        }
+        
+        .footer a {
+            color: #667eea;
+            text-decoration: none;
+        }
+        
+        /* Quick Start Box */
+        .quick-start {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            border-radius: 12px;
+            padding: 30px;
+            color: white;
+            margin: 30px 0;
+        }
+        
+        .quick-start h3 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.4rem;
+        }
+        
+        .quick-start ol {
+            padding-left: 25px;
+        }
+        
+        .quick-start li {
+            margin-bottom: 12px;
+            font-size: 1.05rem;
+        }
+        
+        .quick-start code {
+            background: rgba(0,0,0,0.2);
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-family: monospace;
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .workflow-steps {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .workflow-arrow {
+                transform: rotate(90deg);
+                margin: 5px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>🤖 Autonomous Development System</h1>
+            <p class="subtitle">Build, Enhance & Audit Projects with AI — Zero Manual Intervention</p>
+            <span class="version">Version 1.2 | December 2024</span>
+        </div>
+        
+        <!-- What We Built -->
+        <div class="card">
+            <h2>📦 What Was Built</h2>
+            <p style="font-size: 1.1rem; color: #555; margin-bottom: 25px;">
+                A complete autonomous development system powered by Claude Code. Two mega-prompts that handle 
+                the entire software development lifecycle — from idea to production-ready code.
+            </p>
+            
+            <div class="alert" style="background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%); border-left-color: #10b981;">
+                <div class="alert-title" style="color: #065f46;">V1.2 Updates (High Priority Fixes)</div>
+                <p style="color: #064e3b;">
+                    <strong>External Services</strong> — Stripe, Resend, S3/R2 patterns built-in<br>
+                    <strong>Monorepo Support</strong> — Turborepo, Nx, Lerna, workspaces detected<br>
+                    <strong>CI/CD Generation</strong> — GitHub Actions created automatically<br>
+                    <strong>Docker Generation</strong> — Dockerfile + docker-compose created<br>
+                    <strong>Rate Limiting</strong> — Added to all API scaffolding<br>
+                    <strong>File Uploads</strong> — S3/R2 patterns included<br>
+                    <strong>Real-time</strong> — WebSocket/Socket.io patterns<br>
+                    <strong>Payments</strong> — Stripe checkout + webhooks<br>
+                    <strong>Email</strong> — Resend/SendGrid templates<br>
+                    <strong>Error Boundaries</strong> — React crash protection<br>
+                    <strong>Logging</strong> — Pino/Winston setup<br>
+                    <strong>80% Coverage Enforced</strong> — Tests required<br>
+                    <strong>Integration Tests</strong> — API test templates<br>
+                    <strong>SEO Basics</strong> — Meta tags, OG, sitemap<br>
+                    <strong>Mobile Responsive</strong> — Viewport + breakpoints audited<br>
+                    <strong>Admin Panel</strong> — Scaffold option available<br>
+                    <strong>Background Jobs</strong> — BullMQ/Celery patterns
+                </p>
+            </div>
+            
+            <div class="alert" style="background: linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 100%); border-left-color: #6366f1; margin-top: 15px;">
+                <div class="alert-title" style="color: #3730a3;">V1.1 Updates (Critical Fixes)</div>
+                <p style="color: #312e81;">
+                    Git init check • Language detection • Migration strategy • Rollback checkpoints • Security tests • Secrets scanning • Dependency vulnerabilities • Builder→QA handoff • Large codebase support
+                </p>
+            </div>
+            
+            <div class="system-grid">
+                <div class="system-component builder">
+                    <h4>🏗️ Project Builder V1.2</h4>
+                    <p>Builds new projects OR enhances existing. Auto-detects language, package manager, and monorepos.
+                    Includes CI/CD, Docker, logging, rate limiting, error boundaries. Supports Stripe, email, file uploads, 
+                    real-time, background jobs. Enforces 80% test coverage with security + integration tests.</p>
+                    <span class="file-name">PROJECT-BUILDER-V1.2.md</span>
+                </div>
+                
+                <div class="system-component qa">
+                    <h4>🔍 QA Audit V4.2</h4>
+                    <p>6 specialist audits with infrastructure checks. Enforces 80% coverage — adds missing edge case, 
+                    integration, and security tests. Audits SEO, mobile responsiveness, CI/CD, Docker. Scans secrets 
+                    and dependencies. Creates missing infrastructure. Comprehensive report with before/after metrics.</p>
+                    <span class="file-name">QA-AUDIT-V4.2.md</span>
+                </div>
+            </div>
+            
+            <h3>The 6 QA Specialists</h3>
+            <div class="specialists">
+                <div class="specialist">
+                    <div class="icon">🔒</div>
+                    <div class="name">Security<br>Consultant</div>
+                </div>
+                <div class="specialist">
+                    <div class="icon">⚖️</div>
+                    <div class="name">Legal<br>Counsel</div>
+                </div>
+                <div class="specialist">
+                    <div class="icon">⚙️</div>
+                    <div class="name">DevOps<br>Engineer</div>
+                </div>
+                <div class="specialist">
+                    <div class="icon">🧪</div>
+                    <div class="name">QA<br>Engineer</div>
+                </div>
+                <div class="specialist">
+                    <div class="icon">♿</div>
+                    <div class="name">Accessibility<br>Specialist</div>
+                </div>
+                <div class="specialist">
+                    <div class="icon">🎨</div>
+                    <div class="name">UI/UX<br>Designer</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Use Cases -->
+        <div class="card">
+            <h2>🎯 Use Cases</h2>
+            
+            <div class="use-cases">
+                <div class="use-case">
+                    <h4>🆕 New Project from Scratch</h4>
+                    <p>Client gives you an idea, pitch deck, or requirements doc. System builds it.</p>
+                    <span class="prompt-badge builder">Project Builder</span>
+                </div>
+                
+                <div class="use-case">
+                    <h4>➕ Add Feature to Existing App</h4>
+                    <p>Client has a codebase, wants new functionality added without breaking things.</p>
+                    <span class="prompt-badge builder">Project Builder</span>
+                </div>
+                
+                <div class="use-case">
+                    <h4>🔧 Fix Buggy Project</h4>
+                    <p>Inherited messy code? Audit finds issues, implements fixes, runs tests.</p>
+                    <span class="prompt-badge qa">QA Audit</span>
+                </div>
+                
+                <div class="use-case">
+                    <h4>🔄 Modernize Legacy Code</h4>
+                    <p>Old PHP site needs updating? Enhancement mode respects existing patterns.</p>
+                    <span class="prompt-badge builder">Project Builder</span>
+                </div>
+                
+                <div class="use-case">
+                    <h4>✅ Pre-Launch Quality Check</h4>
+                    <p>Before going live, run full audit: security, legal, accessibility, tests.</p>
+                    <span class="prompt-badge qa">QA Audit</span>
+                </div>
+                
+                <div class="use-case">
+                    <h4>📄 Build from Documents</h4>
+                    <p>Have PDFs, PowerPoints, Figma links? System analyzes and builds.</p>
+                    <span class="prompt-badge builder">Project Builder</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- How To Use -->
+        <div class="card">
+            <h2>🚀 How To Use</h2>
+            
+            <h3>Workflow 1: Build New Project</h3>
+            <div class="workflow">
+                <div class="workflow-title">Steps</div>
+                <div class="workflow-steps">
+                    <div class="workflow-step"><span class="number">1</span> Create folder</div>
+                    <span class="workflow-arrow">→</span>
+                    <div class="workflow-step"><span class="number">2</span> Drop materials</div>
+                    <span class="workflow-arrow">→</span>
+                    <div class="workflow-step"><span class="number">3</span> Paste Builder prompt</div>
+                    <span class="workflow-arrow">→</span>
+                    <div class="workflow-step"><span class="number">4</span> Approve plan</div>
+                    <span class="workflow-arrow">→</span>
+                    <div class="workflow-step"><span class="number">5</span> It builds</div>
+                    <span class="workflow-arrow">→</span>
+                    <div class="workflow-step"><span class="number">6</span> You deploy</div>
+                </div>
+            </div>
+            
+            <div class="code-block">
+                <code>
+<span class="comment"># Step 1: Create project folder</span><br>
+mkdir new-client-project && cd new-client-project<br><br>
+<span class="comment"># Step 2: (Optional) Drop reference materials</span><br>
+<span class="comment"># - pitch-deck.pdf</span><br>
+<span class="comment"># - wireframes.png</span><br>
+<span class="comment"># - requirements.docx</span><br><br>
+<span class="comment"># Step 3: Open Claude Code and paste PROJECT-BUILDER-V1.md</span><br>
+<span class="comment"># Step 4: Review plan when prompted, type "approve"</span><br>
+<span class="comment"># Step 5: Watch it build autonomously</span><br>
+<span class="comment"># Step 6: Follow DEPLOYMENT_INSTRUCTIONS.md to deploy</span>
+                </code>
+            </div>
+            
+            <h3>Workflow 2: Add Feature to Existing Project</h3>
+            <div class="workflow">
+                <div class="workflow-title">Steps</div>
+                <div class="workflow-steps">
+                    <div class="workflow-step"><span class="number">1</span> cd into project</div>
+                    <span class="workflow-arrow">→</span>
+                    <div class="workflow-step"><span class="number">2</span> Paste Builder prompt</div>
+                    <span class="workflow-arrow">→</span>
+                    <div class="workflow-step"><span class="number">3</span> Select "A" (add feature)</div>
+                    <span class="workflow-arrow">→</span>
+                    <div class="workflow-step"><span class="number">4</span> Describe feature</div>
+                    <span class="workflow-arrow">→</span>
+                    <div class="workflow-step"><span class="number">5</span> Approve plan</div>
+                    <span class="workflow-arrow">→</span>
+                    <div class="workflow-step"><span class="number">6</span> It builds</div>
+                </div>
+            </div>
+            
+            <div class="code-block">
+                <code>
+<span class="comment"># Step 1: Navigate to existing project</span><br>
+cd ~/projects/client-existing-app<br><br>
+<span class="comment"># Step 2: Open Claude Code and paste PROJECT-BUILDER-V1.md</span><br>
+<span class="comment"># Step 3: It detects existing code, asks what you want</span><br>
+<span class="comment"># Step 4: Select "A" to add feature, describe what you need</span><br>
+<span class="comment"># Step 5: Review plan, type "approve"</span><br>
+<span class="comment"># Step 6: It builds feature matching existing code style</span>
+                </code>
+            </div>
+            
+            <h3>Workflow 3: Audit & Fix Existing Project</h3>
+            <div class="workflow">
+                <div class="workflow-title">Steps</div>
+                <div class="workflow-steps">
+                    <div class="workflow-step"><span class="number">1</span> cd into project</div>
+                    <span class="workflow-arrow">→</span>
+                    <div class="workflow-step"><span class="number">2</span> Paste QA Audit prompt</div>
+                    <span class="workflow-arrow">→</span>
+                    <div class="workflow-step"><span class="number">3</span> It audits (6 specialists)</div>
+                    <span class="workflow-arrow">→</span>
+                    <div class="workflow-step"><span class="number">4</span> It fixes issues</div>
+                    <span class="workflow-arrow">→</span>
+                    <div class="workflow-step"><span class="number">5</span> It runs tests</div>
+                    <span class="workflow-arrow">→</span>
+                    <div class="workflow-step"><span class="number">6</span> Review report</div>
+                </div>
+            </div>
+            
+            <div class="code-block">
+                <code>
+<span class="comment"># Step 1: Navigate to project</span><br>
+cd ~/projects/buggy-client-app<br><br>
+<span class="comment"># Step 2: Open Claude Code and paste CLAUDE-CODE-MEGA-PROMPT-V4.md</span><br>
+<span class="comment"># Step 3: It runs all 6 specialist audits automatically</span><br>
+<span class="comment"># Step 4: It fixes CRITICAL → HIGH → MEDIUM → LOW issues</span><br>
+<span class="comment"># Step 5: It runs tests, fixes failures</span><br>
+<span class="comment"># Step 6: Review QA_AUDIT_REPORT.md for summary</span>
+                </code>
+            </div>
+        </div>
+        
+        <!-- What Each Prompt Does -->
+        <div class="card">
+            <h2>📋 What Each Prompt Does</h2>
+            
+            <h3>Project Builder V1</h3>
+            <table>
+                <tr>
+                    <th>Phase</th>
+                    <th>What Happens</th>
+                    <th>Human Action</th>
+                </tr>
+                <tr>
+                    <td>Phase 0: Input</td>
+                    <td>Scans for existing code, analyzes materials (PDFs, docs, images), asks questions</td>
+                    <td>Provide materials or describe project</td>
+                </tr>
+                <tr>
+                    <td>Phase 1: Planning</td>
+                    <td>Creates REQUIREMENTS.md, ARCHITECTURE.md, TASKS.md</td>
+                    <td><strong>APPROVE</strong> before it builds</td>
+                </tr>
+                <tr>
+                    <td>Phase 2: Implementation</td>
+                    <td>Builds each task: tests first, then code, then commit</td>
+                    <td>None — fully autonomous</td>
+                </tr>
+                <tr>
+                    <td>Phase 3: Finalization</td>
+                    <td>Creates docs, E2E tests, deployment instructions</td>
+                    <td>Deploy + run E2E tests yourself</td>
+                </tr>
+            </table>
+            
+            <h3>QA Audit V4</h3>
+            <table>
+                <tr>
+                    <th>Phase</th>
+                    <th>What Happens</th>
+                    <th>Human Action</th>
+                </tr>
+                <tr>
+                    <td>Phase 1: Reconnaissance</td>
+                    <td>Reads package.json, scans structure, detects project type (HIPAA, CROA, etc.)</td>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <td>Phase 2: Audit</td>
+                    <td>All 6 specialists audit: Security, Legal, DevOps, QA, Accessibility, UI/UX</td>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <td>Phase 3: Fix</td>
+                    <td>Implements ALL fixes (Critical → High → Medium → Low), commits each</td>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <td>Phase 4: Test</td>
+                    <td>Runs TypeScript, lint, unit tests; loops until green</td>
+                    <td>Run E2E tests yourself</td>
+                </tr>
+                <tr>
+                    <td>Phase 5: Report</td>
+                    <td>Creates QA_AUDIT_REPORT.md, pushes to GitHub</td>
+                    <td>Review report</td>
+                </tr>
+            </table>
+        </div>
+        
+        <!-- Key Features -->
+        <div class="card">
+            <h2>✨ Key Features</h2>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+                <div>
+                    <h3>Project Builder</h3>
+                    <ul class="features-list">
+                        <li>Analyzes PDFs, DOCX, PPTX, images, URLs</li>
+                        <li>Detects existing projects vs new</li>
+                        <li>Enhancement mode matches existing patterns</li>
+                        <li>Tech stack agnostic (React, Vue, Django, Rails, etc.)</li>
+                        <li>Test-driven development (tests first)</li>
+                        <li>Atomic commits after each task</li>
+                        <li>Pauses for plan approval (safety net)</li>
+                        <li>Creates deployment instructions</li>
+                        <li>State management for session resume</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3>QA Audit</h3>
+                    <ul class="features-list">
+                        <li>6 specialist perspectives</li>
+                        <li>HIPAA compliance detection</li>
+                        <li>CROA compliance detection</li>
+                        <li>OWASP Top 10 security checks</li>
+                        <li>WCAG 2.1 AA accessibility</li>
+                        <li>Fixes ALL severity levels</li>
+                        <li>Runs and fixes failing tests</li>
+                        <li>Generates comprehensive report</li>
+                        <li>Auto-commits and pushes</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Important Notes -->
+        <div class="card">
+            <h2>⚠️ Important Notes</h2>
+            
+            <div class="alert">
+                <div class="alert-title">What You Still Do Manually</div>
+                <p>
+                    <strong>1. Database setup</strong> — Create Neon/Supabase database, get connection string<br>
+                    <strong>2. Deployment</strong> — Push to Vercel/Railway/your host<br>
+                    <strong>3. E2E tests</strong> — Run Cypress after server is live<br>
+                    <strong>4. Environment variables</strong> — Fill in .env from .env.example
+                </p>
+            </div>
+            
+            <h3>Limitations of Claude Code</h3>
+            <table>
+                <tr>
+                    <th>Can Do</th>
+                    <th>Cannot Do</th>
+                </tr>
+                <tr>
+                    <td>Read/write files</td>
+                    <td>Provision cloud databases</td>
+                </tr>
+                <tr>
+                    <td>Run npm/pip commands</td>
+                    <td>Bind to network ports</td>
+                </tr>
+                <tr>
+                    <td>Run unit tests</td>
+                    <td>Run E2E tests (needs live server)</td>
+                </tr>
+                <tr>
+                    <td>Git commit/push</td>
+                    <td>Deploy to hosting providers</td>
+                </tr>
+                <tr>
+                    <td>Analyze images/PDFs</td>
+                    <td>Access Figma without link/screenshot</td>
+                </tr>
+            </table>
+        </div>
+        
+        <!-- Quick Start -->
+        <div class="quick-start">
+            <h3>⚡ Quick Start — Your First Build</h3>
+            <ol>
+                <li>Download both prompt files from this system</li>
+                <li>Open terminal: <code>mkdir test-project && cd test-project</code></li>
+                <li>Open Claude Code in that directory</li>
+                <li>Copy entire contents of <code>PROJECT-BUILDER-V1.md</code></li>
+                <li>Paste into Claude Code</li>
+                <li>When it asks what to build, say: "A simple todo app with user authentication"</li>
+                <li>Review and approve the plan</li>
+                <li>Watch it build!</li>
+            </ol>
+        </div>
+        
+        <!-- Files Reference -->
+        <div class="card">
+            <h2>📁 Files Reference</h2>
+            
+            <table>
+                <tr>
+                    <th>File</th>
+                    <th>Purpose</th>
+                    <th>When to Use</th>
+                </tr>
+                <tr>
+                    <td><code>PROJECT-BUILDER-V1.2.md</code></td>
+                    <td>Build new projects or enhance existing</td>
+                    <td>Starting fresh or adding features</td>
+                </tr>
+                <tr>
+                    <td><code>QA-AUDIT-V4.2.md</code></td>
+                    <td>Audit and fix existing projects</td>
+                    <td>Quality check, bug fixing, pre-launch</td>
+                </tr>
+            </table>
+            
+            <h3>Files Created by Builder</h3>
+            <table>
+                <tr>
+                    <th>File</th>
+                    <th>Contains</th>
+                </tr>
+                <tr>
+                    <td><code>REQUIREMENTS.md</code></td>
+                    <td>What's being built, acceptance criteria</td>
+                </tr>
+                <tr>
+                    <td><code>ARCHITECTURE.md</code></td>
+                    <td>Tech stack, data models, API design</td>
+                </tr>
+                <tr>
+                    <td><code>TASKS.md</code></td>
+                    <td>Implementation checklist</td>
+                </tr>
+                <tr>
+                    <td><code>progress.md</code></td>
+                    <td>Build state (for resuming sessions)</td>
+                </tr>
+                <tr>
+                    <td><code>DEPLOYMENT_INSTRUCTIONS.md</code></td>
+                    <td>How to deploy the project</td>
+                </tr>
+            </table>
+            
+            <h3>Files Created by QA Audit</h3>
+            <table>
+                <tr>
+                    <th>File</th>
+                    <th>Contains</th>
+                </tr>
+                <tr>
+                    <td><code>QA_AUDIT_REPORT.md</code></td>
+                    <td>Full audit results, fixes made, items for human review</td>
+                </tr>
+            </table>
+        </div>
+        
+        <!-- Footer -->
+        <div class="footer">
+            <p>Built with Claude AI | December 2024</p>
+            <p style="margin-top: 10px;">System designed for rapid client project delivery</p>
+        </div>
+    </div>
+</body>
+</html>
