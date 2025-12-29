@@ -9,8 +9,7 @@ const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
 const navigation = [
   { name: "Features", href: "#features" },
-  { name: "How It Works", href: "#demo" },
-  { name: "Integrations", href: "#integrations" },
+  { name: "Trust", href: "#trust" },
   { name: "About", href: "#about" },
 ];
 

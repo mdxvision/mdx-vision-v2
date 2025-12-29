@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { VideoEmbed } from "@/components/video";
 
 const features = [
   {
@@ -145,24 +146,33 @@ export default function EMSPage() {
         </div>
       </section>
 
-      {/* Video Placeholder */}
+      {/* Demo Video */}
       <section className="py-20">
         <div className="max-w-5xl mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="aspect-video rounded-2xl glass border border-glass-border flex items-center justify-center"
+            className="text-center mb-8"
           >
-            <div className="text-center">
-              <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-glow-cyan/20 text-glow-cyan flex items-center justify-center">
-                <svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15.91 11.672a.375.375 0 010 .656l-5.603 3.113a.375.375 0 01-.557-.328V8.887c0-.286.307-.466.557-.327l5.603 3.112z" />
-                </svg>
-              </div>
-              <p className="text-secondary">Demo Video Coming Soon</p>
-              <p className="text-sm text-muted mt-2">EMS Field Demo</p>
+            <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">
+              See MDX Vision in Action
+            </h2>
+            <p className="text-secondary">Real-time documentation for emergency responders</p>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="rounded-2xl overflow-hidden border border-glass-border"
+          >
+            <div className="aspect-video">
+              <VideoEmbed
+                platform="youtube"
+                videoId="Lqsi7YR5PrQ"
+                title="MDX Vision Demo"
+                className="w-full h-full"
+              />
             </div>
           </motion.div>
         </div>

@@ -60,7 +60,6 @@ const partners = [
 ];
 
 const stats = [
-  { value: "10M+", label: "Patient encounters documented" },
   { value: "99.9%", label: "Uptime SLA" },
   { value: "256-bit", label: "AES encryption" },
   { value: "<50ms", label: "Average response time" },

@@ -3,12 +3,8 @@
 import { motion } from "framer-motion";
 import { VideoEmbed } from "@/components/video";
 
-const videos = [
-  {
-    videoId: "Lqsi7YR5PrQ",
-    title: "MDX Vision Demo",
-    description: "See how MDX Vision transforms clinical documentation",
-  },
+const videos: { videoId: string; title: string; description: string }[] = [
+  // Video moved to EMS vertical page
 ];
 
 export default function VideoShowcase() {

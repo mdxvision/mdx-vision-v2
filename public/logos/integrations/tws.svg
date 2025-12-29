@@ -1,3 +1,17 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 40">
-  <text x="50" y="28" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="white" text-anchor="middle">TWS</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 50">
+  <defs>
+    <linearGradient id="twsGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#00d4ff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <!-- Globe icon -->
+  <circle cx="25" cy="25" r="14" fill="none" stroke="url(#twsGrad)" stroke-width="1.5"/>
+  <ellipse cx="25" cy="25" rx="6" ry="14" fill="none" stroke="url(#twsGrad)" stroke-width="1"/>
+  <line x1="11" y1="25" x2="39" y2="25" stroke="url(#twsGrad)" stroke-width="1"/>
+  <path d="M13 18 Q25 20 37 18" fill="none" stroke="url(#twsGrad)" stroke-width="0.8"/>
+  <path d="M13 32 Q25 30 37 32" fill="none" stroke="url(#twsGrad)" stroke-width="0.8"/>
+  <!-- Text -->
+  <text x="48" y="22" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="700" fill="white" letter-spacing="1">TWS</text>
+  <text x="48" y="36" font-family="system-ui, -apple-system, sans-serif" font-size="7" font-weight="400" fill="#a1a1aa" letter-spacing="0.5">TRANSLATION WORLD</text>
 </svg>
