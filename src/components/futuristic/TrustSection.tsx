@@ -54,7 +54,6 @@ const integrations = [
 ];
 
 const partners = [
-  { name: "Nuance", logo: "/logos/integrations/nuance.svg" },
   { name: "JBI", logo: "/logos/integrations/jbi.svg" },
   { name: "TWS", logo: "/logos/integrations/tws.svg" },
   { name: "PHC", logo: "/logos/integrations/phc.svg" },
