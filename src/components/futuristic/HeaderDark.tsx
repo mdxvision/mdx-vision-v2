@@ -14,8 +14,17 @@ const navigation = [
   { name: "About", href: "#about" },
 ];
 
+const solutions = [
+  { name: "Healthcare", href: "/v2", description: "Clinical documentation" },
+  { name: "Police", href: "/v2/verticals/police", description: "Law enforcement" },
+  { name: "Fire", href: "/v2/verticals/fire", description: "Fire & rescue" },
+  { name: "EMS", href: "/v2/verticals/ems", description: "Emergency medical" },
+  { name: "Military", href: "/v2/verticals/military", description: "Defense" },
+];
+
 export default function HeaderDark() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [solutionsOpen, setSolutionsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -50,6 +59,54 @@ export default function HeaderDark() {
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-1">
+          {/* Solutions Dropdown */}
+          <div
+            className="relative"
+            onMouseEnter={() => setSolutionsOpen(true)}
+            onMouseLeave={() => setSolutionsOpen(false)}
+          >
+            <button
+              className="px-4 py-2 text-sm text-secondary hover:text-white transition-colors rounded-lg hover:bg-glass-white inline-flex items-center gap-1"
+              aria-expanded={solutionsOpen}
+              aria-haspopup="true"
+            >
+              Solutions
+              <svg
+                className={`w-4 h-4 transition-transform ${solutionsOpen ? 'rotate-180' : ''}`}
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+
+            <AnimatePresence>
+              {solutionsOpen && (
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: 10 }}
+                  transition={{ duration: 0.2 }}
+                  className="absolute top-full left-0 mt-2 w-56 glass border border-glass-border rounded-xl overflow-hidden shadow-xl"
+                >
+                  <div className="py-2">
+                    {solutions.map((solution) => (
+                      <Link
+                        key={solution.name}
+                        href={solution.href}
+                        className="block px-4 py-3 hover:bg-glass-white transition-colors"
+                      >
+                        <span className="block text-sm font-medium text-white">{solution.name}</span>
+                        <span className="block text-xs text-muted">{solution.description}</span>
+                      </Link>
+                    ))}
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+
           {navigation.map((item) => (
             <Link
               key={item.name}
@@ -108,6 +165,21 @@ export default function HeaderDark() {
             className="md:hidden glass border-t border-glass-border"
           >
             <div className="px-6 py-4 space-y-2">
+              {/* Solutions Section */}
+              <div className="pb-2 border-b border-glass-border mb-2">
+                <p className="text-xs text-muted uppercase tracking-wider mb-2">Solutions</p>
+                {solutions.map((solution) => (
+                  <Link
+                    key={solution.name}
+                    href={solution.href}
+                    className="block py-2 text-secondary hover:text-white transition-colors"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    {solution.name}
+                  </Link>
+                ))}
+              </div>
+
               {navigation.map((item) => (
                 <Link
                   key={item.name}
