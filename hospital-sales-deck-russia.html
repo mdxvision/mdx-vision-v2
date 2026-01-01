@@ -477,29 +477,40 @@
            ═══════════════════════════════════════════════════════════════════════════ */
 
         @media (max-width: 1024px) {
-            html, body { overflow-y: auto; height: auto; }
+            html, body {
+                overflow-y: auto !important;
+                overflow-x: hidden !important;
+                height: auto !important;
+            }
+            .deck {
+                display: flex;
+                flex-direction: column;
+            }
             .slide {
-                position: relative;
-                padding: 40px 40px;
+                position: relative !important;
+                padding: 40px 30px;
                 min-height: auto;
                 padding-bottom: 60px;
-                opacity: 1;
-                visibility: visible;
-                transform: none;
+                opacity: 1 !important;
+                visibility: visible !important;
+                transform: none !important;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
             }
-            .slide-logo { left: 40px; top: 20px; height: 24px; }
-            .slide-number { right: 40px; bottom: 20px; }
-            h1 { font-size: 2rem; }
-            h2 { font-size: 1.75rem; }
-            .stat-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
-            .card-grid { grid-template-columns: 1fr; gap: 15px; }
-            .pricing-grid { grid-template-columns: 1fr; gap: 20px; }
-            .two-col { grid-template-columns: 1fr; gap: 30px; }
-            .staff-grid { grid-template-columns: repeat(3, 1fr); gap: 10px; }
-            .timeline { flex-direction: column; gap: 30px; }
+            .slide-logo { left: 30px; top: 20px; height: 24px; }
+            .slide-number { right: 30px; bottom: 20px; }
+            h1 { font-size: 1.75rem; }
+            h2 { font-size: 1.5rem; }
+            .stat-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; width: 100%; }
+            .card-grid { grid-template-columns: 1fr; gap: 15px; width: 100%; }
+            .pricing-grid { grid-template-columns: 1fr; gap: 20px; width: 100%; }
+            .two-col { grid-template-columns: 1fr; gap: 30px; width: 100%; }
+            .staff-grid { grid-template-columns: repeat(3, 1fr); gap: 10px; width: 100%; }
+            .timeline { flex-direction: column; gap: 30px; width: 100%; }
             .timeline::before { display: none; }
-            .nav { display: none; }
-            .nav-arrows { display: none; }
+            .nav { display: none !important; }
+            .nav-arrows { display: none !important; }
         }
 
         @media (max-width: 768px) {
@@ -671,7 +682,7 @@
                     </div>
                 </div>
                 <div style="text-align: center;">
-                    <img src="mdx-glasses-navy-transparent.png" alt="MDx Vision Glasses" style="max-width: 400px; width: 100%;">
+                    <img src="https://mdxvision.github.io/mdx-vision-v2/mdx-glasses-navy-transparent.png" alt="MDx Vision Glasses" style="max-width: 300px; width: 100%;">
                 </div>
             </div>
         </div>
