@@ -233,7 +233,8 @@ src/
     └── logos/
 
 docs/
-├── ARIM-TECHNOLOGY.md     # Core A.R.I.M. technology explanation & patent notes
+├── AOP-TECHNOLOGY.md      # Artificial Omniscient Person - AI assistant layer
+├── ARIM-TECHNOLOGY.md     # Augmented Reality Interpolation Modality - engine
 ├── PITCH-DECK-GUIDE.md    # Universal deck guide (investor, sales, military)
 └── reference/             # MDX documentation
     ├── MASTER-REQUIREMENTS.md
