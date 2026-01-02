@@ -328,6 +328,15 @@ Working on v2 verticals (police, fire, ems, military) - improving to Apple/Deloi
 **Where to add:** Military deck slide 5 (Hardware) or slide 7 (Use Cases)
 **Source:** Check datafiles/mdx-conversations/military/ and vision/ folders
 
+### Voice-Controlled Drone (Patent Feature)
+**Status:** In patent (US Patent 15/237,980)
+**Feature:** Voice commands to control UAVs via HMD
+- Hands-free drone operation
+- AR overlay of drone camera feed
+- Integration with A.R.I.M. interpolation engine
+
+**Note:** Russia developing similar (VR helmet for UAV control) but MDx has voice-first approach
+
 ---
 
 ## Allied Nations Defense Procurement (Research Jan 2026)
@@ -386,6 +395,61 @@ Working on v2 verticals (police, fire, ems, military) - improving to Apple/Deloi
 - https://www.nato.int/cps/en/natohq/official_texts_236539.htm
 - https://www.dsca.mil/Programs/Defense-Trade-and-Arms-Transfers/Foreign-Military-Sales
 - https://www.whitehouse.gov/presidential-actions/2025/04/reforming-foreign-defense-sales-to-improve-speed-and-accountability/
+
+---
+
+## Russian Military Tech Research (Competitive Intelligence - Jan 2026)
+
+### Ratnik Program (Infantry Combat System)
+**Status:** Basic gear deployed (300K sets), AR glasses unclear
+
+| Component | Status |
+|-----------|--------|
+| Body armor, helmet, comms | ✅ Deployed |
+| AR glasses ($6K/unit) | ⚠️ Developed, no confirmed field use |
+| Sotnik (Ratnik-3) | Planned 2025, unclear delivery |
+
+**AR Glasses Specs (Novosibirsk Instrument Making Plant):**
+- Cost: ~$6,000 USD (more than HoloLens 2)
+- Features: Display info from command, electronic sight, drone video feed
+- Optional: Night vision, thermal imager
+
+**Strelets Communication System:**
+- Voice/video communication
+- GLONASS navigation
+- Squad leader sees soldier positions
+- Book-sized computer display
+
+### Russian Battlefield Medical System
+**4-Stage System:**
+1. Mobile medical units
+2. Military district hospitals
+3. Central military facilities
+4. Rehabilitation centers
+
+**Reality in Ukraine (per CNA/FMSO reports):**
+- Equipment: "Ancient Soviet bandage kit" + Esmarch tourniquet
+- Supplies run out quickly, soldiers improvise
+- Death-to-wounded ratio: 1:1.3 (very high)
+- Drones complicate helicopter medevac
+
+### MDx Competitive Advantages vs Russia
+
+| Area | Russia | MDx Vision |
+|------|--------|------------|
+| AR Glasses | $6K, basic overlay | Full A.R.I.M. interpolation |
+| Medical | Soviet-era kits | Real-time 9-Line (1-4 min) |
+| Communication | Positions only | Voice + data + 500+ languages |
+| Drone Control | VR helmet (manual) | Voice-controlled (patent) |
+| Medevac | Manual, slow | Automated, hands-free |
+
+**Key Insight:** Gap between Russian announcements and field reality. Soldiers using improvised medical gear while $6K AR glasses announced but not deployed.
+
+**Sources:**
+- https://en.wikipedia.org/wiki/Ratnik_(program)
+- https://fmso.tradoc.army.mil/2024/details-emerge-on-the-russian-medical-system-in-ukraine/
+- https://www.cna.org/reports/2024/11/We-Need-a-Medic-a_4920.pdf
+- https://tass.com/defense/1018615
 
 ### Priority Improvements
 1. Custom typography (premium fonts)
