@@ -175,9 +175,10 @@
 - Clinical summarization
 
 ### A.R.I.M. Technology (Patent Pending)
-- Augmented Reality Interpolation Modality
-- Core differentiator
-- Real-time data overlay
+- **Augmented Reality Interpolation Modality**
+- Core differentiator: Not a display, an intelligence layer
+- Takes fragmented inputs → interpolates meaning → outputs unified AR experience
+- See `docs/ARIM-TECHNOLOGY.md` for full technical explanation
 
 ---
 
@@ -232,6 +233,7 @@ src/
     └── logos/
 
 docs/
+├── ARIM-TECHNOLOGY.md     # Core A.R.I.M. technology explanation & patent notes
 ├── PITCH-DECK-GUIDE.md    # Universal deck guide (investor, sales, military)
 └── reference/             # MDX documentation
     ├── MASTER-REQUIREMENTS.md
