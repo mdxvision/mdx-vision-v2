@@ -477,53 +477,183 @@
            ═══════════════════════════════════════════════════════════════════════════ */
 
         @media (max-width: 1024px) {
-            html, body { overflow-y: auto; height: auto; }
-            .slide {
-                position: relative;
-                padding: 40px 40px;
-                min-height: 100vh;
-                opacity: 1;
-                visibility: visible;
-                transform: none;
+            html, body {
+                overflow-y: auto !important;
+                overflow-x: hidden !important;
+                height: auto !important;
             }
-            .slide-logo { left: 40px; top: 20px; height: 24px; }
-            .slide-number { right: 40px; bottom: 20px; }
-            h1 { font-size: 2rem; }
-            h2 { font-size: 1.75rem; }
-            .content { width: 100%; max-width: 100%; gap: 20px; }
-            .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; gap: 15px; }
-            .nav-dots { display: none; }
-            .hero-logo { height: 60px; }
+            .deck {
+                display: flex;
+                flex-direction: column;
+            }
+            .slide {
+                position: relative !important;
+                padding: 40px 30px;
+                min-height: auto;
+                padding-bottom: 60px;
+                opacity: 1 !important;
+                visibility: visible !important;
+                transform: none !important;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            .slide-logo { left: 30px; top: 20px; height: 24px; }
+            .slide-number { right: 30px; bottom: 20px; }
+            h1 { font-size: 1.75rem; }
+            h2 { font-size: 1.5rem; }
+            .stat-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; width: 100%; }
+            .card-grid { grid-template-columns: 1fr; gap: 15px; width: 100%; }
+            .pricing-grid { grid-template-columns: 1fr; gap: 20px; width: 100%; }
+            .two-col { grid-template-columns: 1fr; gap: 30px; width: 100%; }
+            .staff-grid { grid-template-columns: repeat(3, 1fr); gap: 10px; width: 100%; }
+            .timeline { flex-direction: column; gap: 30px; width: 100%; }
+            .timeline::before { display: none; }
+            .nav { display: none !important; }
+            .nav-arrows { display: none !important; }
         }
 
         @media (max-width: 768px) {
-            .slide { padding: 30px 20px; padding-top: 60px; }
+            .slide { padding: 30px 20px; padding-top: 60px; padding-bottom: 40px; }
             .slide-logo { left: 20px; top: 15px; height: 20px; }
             .slide-number { right: 20px; bottom: 15px; font-size: 0.75rem; }
             h1 { font-size: 1.5rem; line-height: 1.3; }
             h2 { font-size: 1.25rem; }
             h3 { font-size: 0.9rem; }
-            p, li, td { font-size: 0.85rem; }
-            .tagline { font-size: 1rem; }
-            .stat-card, .card { padding: 15px; }
-            .stat-number { font-size: 1.75rem; }
-            .hero-logo { height: 50px; }
-            .feature-item { padding: 12px; }
-            .pricing-card { padding: 20px; min-width: auto; width: 100%; }
-            table { font-size: 0.75rem; }
-            th, td { padding: 8px 6px; }
-            .role-grid { grid-template-columns: repeat(3, 1fr); gap: 10px; }
-            .contact-grid { grid-template-columns: 1fr; gap: 15px; }
+            p { font-size: 0.9rem; }
+            .subtitle { font-size: 1rem; }
+            .stat-grid { grid-template-columns: 1fr 1fr; gap: 15px; }
+            .stat-number { font-size: 2rem; }
+            .stat-label { font-size: 0.75rem; }
+            .card { padding: 15px; }
+            .feature-item { padding: 10px 0; font-size: 0.85rem; }
+            .pricing-card { padding: 20px; }
+            .pricing-card .price { font-size: 2rem; }
+            .staff-grid { grid-template-columns: repeat(3, 1fr); gap: 8px; }
+            .staff-item { padding: 10px 5px; }
+            .staff-item span { font-size: 0.65rem; }
+            .contact-grid { flex-direction: column; gap: 15px; }
+            .roi-box { padding: 25px 20px; }
+            .roi-box .stat-number { font-size: 3rem; }
+            .highlight-box { padding: 20px; }
+            .quote { font-size: 1.3rem; }
+            .timeline-item { text-align: left; padding-left: 20px; border-left: 2px solid var(--accent); }
+            .timeline-dot { position: absolute; left: -7px; margin: 0; }
+            .cta { padding: 14px 28px; font-size: 0.9rem; }
         }
 
         @media (max-width: 480px) {
-            .slide { padding: 25px 15px; padding-top: 55px; }
-            h1 { font-size: 1.25rem; }
-            h2 { font-size: 1.1rem; }
-            .stat-number { font-size: 1.5rem; }
-            .hero-logo { height: 40px; }
-            .role-grid { grid-template-columns: repeat(2, 1fr); }
-            .russia-badge { padding: 6px 12px; font-size: 0.8rem; }
+            .slide {
+                padding: 20px 15px !important;
+                padding-top: 50px !important;
+                padding-bottom: 30px !important;
+            }
+            h1 { font-size: 1.3rem !important; line-height: 1.3 !important; text-align: center !important; }
+            h2 { font-size: 1.2rem !important; text-align: center !important; }
+            h3 { font-size: 0.85rem !important; letter-spacing: 1px !important; }
+            p { font-size: 0.9rem !important; }
+            .subtitle { font-size: 1rem !important; }
+            .section-label { font-size: 0.7rem !important; }
+
+            /* Force single column for stats */
+            .stat-grid {
+                display: grid !important;
+                grid-template-columns: 1fr !important;
+                gap: 15px !important;
+                width: 100% !important;
+                max-width: 100% !important;
+            }
+            .stat {
+                padding-left: 15px !important;
+                border-left-width: 3px !important;
+            }
+            .stat-number { font-size: 2rem !important; }
+            .stat-label { font-size: 0.75rem !important; }
+
+            /* Force single column for cards */
+            .card-grid {
+                display: grid !important;
+                grid-template-columns: 1fr !important;
+                gap: 15px !important;
+                width: 100% !important;
+            }
+            .card { padding: 15px !important; }
+            .card h4 { font-size: 1rem !important; }
+            .card p { font-size: 0.85rem !important; }
+
+            /* Force single column for pricing */
+            .pricing-grid {
+                display: grid !important;
+                grid-template-columns: 1fr !important;
+                gap: 20px !important;
+                width: 100% !important;
+            }
+            .pricing-card { padding: 20px !important; }
+            .pricing-card .price { font-size: 2rem !important; }
+            .pricing-card li { font-size: 0.85rem !important; padding: 8px 0 !important; }
+            .pricing-card.featured::before { font-size: 0.6rem !important; padding: 3px 8px !important; top: -10px !important; }
+
+            /* Staff grid - 2 columns on mobile */
+            .staff-grid {
+                display: grid !important;
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 10px !important;
+                width: 100% !important;
+            }
+            .staff-item { padding: 12px 8px !important; }
+            .staff-item i { width: 24px !important; height: 24px !important; }
+            .staff-item span { font-size: 0.7rem !important; }
+
+            /* Two column layout - stack */
+            .two-col {
+                display: grid !important;
+                grid-template-columns: 1fr !important;
+                gap: 25px !important;
+                width: 100% !important;
+            }
+            .two-col img { max-width: 250px !important; height: auto !important; margin: 0 auto !important; }
+
+            .russia-badge { padding: 8px 15px !important; font-size: 0.8rem !important; }
+            .feature-list { gap: 10px !important; }
+            .feature-item { font-size: 0.85rem !important; padding: 10px 0 !important; }
+            .check { font-size: 1rem !important; }
+            .highlight-box { padding: 20px !important; margin-top: 25px !important; }
+            .highlight-box h4 { font-size: 1rem !important; }
+            .highlight-box p { font-size: 0.85rem !important; }
+            .roi-box { padding: 25px 20px !important; margin-top: 30px !important; width: 100% !important; }
+            .roi-box .stat-number { font-size: 2.5rem !important; }
+            .roi-box .stat-label { font-size: 0.8rem !important; }
+            .quote { font-size: 1.1rem !important; line-height: 1.4 !important; }
+
+            /* Timeline */
+            .timeline {
+                flex-direction: column !important;
+                gap: 25px !important;
+                width: 100% !important;
+            }
+            .timeline::before { display: none !important; }
+            .timeline-item {
+                text-align: left !important;
+                padding-left: 20px !important;
+                border-left: 3px solid var(--accent) !important;
+                position: relative !important;
+            }
+            .timeline-dot { display: none !important; }
+            .timeline-label { font-size: 0.8rem !important; }
+            .timeline-content { font-size: 0.85rem !important; }
+
+            /* Contact */
+            .contact-grid {
+                flex-direction: column !important;
+                gap: 15px !important;
+                width: 100% !important;
+            }
+            .contact-item .label { font-size: 0.75rem !important; }
+            .contact-item .value { font-size: 0.95rem !important; }
+            .cta { padding: 14px 25px !important; font-size: 0.85rem !important; letter-spacing: 1px !important; }
+
+            .slide-logo { height: 20px !important; left: 15px !important; top: 15px !important; }
+            .slide-number { font-size: 0.7rem !important; right: 15px !important; bottom: 15px !important; }
         }
 
         /* Smooth scrolling for mobile */
@@ -537,7 +667,7 @@
     <div class="deck">
         <!-- Слайд 1: Титульный -->
         <div class="slide active" data-slide="1">
-            <img src="https://mdxvision.github.io/mdx-vision-v2/logos/mdx-logo-white.png" alt="MDx Vision" style="height: 100px; filter: brightness(0);">
+            <img src="https://mdxvision.github.io/mdx-vision-v2/logos/mdx-logo-white.png" alt="MDx Vision" style="height: 28px; filter: brightness(0);">
             <h1 style="margin-top: 30px;">Голосовые AR-очки для<br>Российского Здравоохранения</h1>
             <p class="subtitle">Документирование без рук. Глаза на пациенте.</p>
             <div class="russia-badge">🇷🇺 Полная поддержка русского языка</div>
@@ -605,7 +735,7 @@
                     </div>
                 </div>
                 <div style="text-align: center;">
-                    <img src="mdx-glasses-navy-transparent.png" alt="MDx Vision Glasses" style="max-width: 400px; width: 100%;">
+                    <img src="https://mdxvision.github.io/mdx-vision-v2/mdx-glasses-navy-transparent.png" alt="MDx Vision Glasses" style="max-width: 300px; width: 100%;">
                 </div>
             </div>
         </div>
