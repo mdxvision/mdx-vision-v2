@@ -328,6 +328,65 @@ Working on v2 verticals (police, fire, ems, military) - improving to Apple/Deloi
 **Where to add:** Military deck slide 5 (Hardware) or slide 7 (Use Cases)
 **Source:** Check datafiles/mdx-conversations/military/ and vision/ folders
 
+---
+
+## Allied Nations Defense Procurement (Research Jan 2026)
+
+### NATO (32 Nations)
+**Key 2025 Changes:**
+- Rapid Adoption Action Plan - Tech adoption within 24 months
+- Iterative procurement replacing waterfall - easier for startups
+- DIANA - Testing/validation for dual-use tech
+- NIF - Equity investment in early-stage defense companies
+- 5% GDP commitment by 2035 - massive budget increases
+
+**Entry Points:**
+| Program | Purpose |
+|---------|---------|
+| DIANA | Dual-use tech testing |
+| NIF | Early-stage investment |
+| NATO Innovation Ranges | Operational testing (Estonia, Finland, Italy, Latvia, Netherlands, Sweden) |
+
+### Five Eyes (US, UK, Australia, Canada, NZ)
+**Advantages:**
+- Shortened export controls between members
+- AUKUS Track 2 - AI and advanced tech cooperation (US, UK, Australia)
+- Integrated defense procurement systems
+- Personnel mobility as of 2025
+
+**Current Status:**
+- US, UK, Australia leading in tech integration
+- Canada, NZ lagging - opportunity for suppliers
+
+### US Foreign Military Sales (FMS)
+**2025 Reforms (Executive Order):**
+- Faster approval process
+- Reduced regulations
+- Priority partner lists
+- $118B in FY2024 (up 46%)
+
+**Priority Partners (15-day approval):**
+- NATO members
+- Japan
+- Australia
+- South Korea
+- Israel
+- New Zealand
+
+### Recommended Markets for MDx
+| Market | Why | Entry Path |
+|--------|-----|------------|
+| Australia | AUKUS partner, active procurement | FMS or direct |
+| UK | Five Eyes, tech-forward | Direct or NATO |
+| Israel | Priority partner, combat-proven needs | FMS |
+| South Korea | Priority partner, DMZ needs | FMS |
+| NATO Eastern Europe | Ukraine border, urgent needs | NATO/DIANA |
+
+**Sources:**
+- https://www.nato.int/cps/en/natohq/official_texts_236539.htm
+- https://www.dsca.mil/Programs/Defense-Trade-and-Arms-Transfers/Foreign-Military-Sales
+- https://www.whitehouse.gov/presidential-actions/2025/04/reforming-foreign-defense-sales-to-improve-speed-and-accountability/
+
 ### Priority Improvements
 1. Custom typography (premium fonts)
 2. Hero video (autoplay muted)
