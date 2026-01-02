@@ -313,6 +313,21 @@ npm run lint     # Run ESLint
 
 Working on v2 verticals (police, fire, ems, military) - improving to Apple/Deloitte enterprise-level presentation.
 
+---
+
+## Future Features (To Research & Add)
+
+### UHF Integration in HMD (Military)
+**Status:** Needs research - conversations exist in datafiles
+**Feature:** Hands-free walkie talkie with offline communications
+- UHF radio integration in helmet-mounted display
+- Push-to-talk via voice command
+- Offline mesh communication between units
+- No reliance on cell/wifi infrastructure
+
+**Where to add:** Military deck slide 5 (Hardware) or slide 7 (Use Cases)
+**Source:** Check datafiles/mdx-conversations/military/ and vision/ folders
+
 ### Priority Improvements
 1. Custom typography (premium fonts)
 2. Hero video (autoplay muted)
