@@ -114,6 +114,59 @@
 
 ---
 
+## Competitor Research (Jan 2026)
+
+### DAX Copilot (Microsoft/Nuance)
+| Metric | Stat | Source |
+|--------|------|--------|
+| Time saved | 50% reduction, ~7 min/encounter | Nuance |
+| Hours saved | 2 hrs per 12-hr shift (nurse) | Nuance |
+| Burnout reduction | 70% reduced feelings | Nuance |
+| ROI | 112% (Northwestern Medicine) | PR Newswire |
+| Pricing | ~$600/clinician/month | DictationOne |
+| Adoption | 150+ hospitals on Epic | Healthcare IT News |
+
+**Limitations:** Post-encounter only, no AR, no real-time translation, requires Epic integration
+
+### Augmedix (acquired by Commure)
+| Metric | Stat | Source |
+|--------|------|--------|
+| Time saved | 80% reduction, 2 hrs/day | Augmedix |
+| Work-life satisfaction | 40% increase | Augmedix |
+| Productivity increase | 20% | Augmedix |
+| Patient experience | 8% improvement (Ochsner) | PHTI Report |
+| Industry ROI | 387-2,200% for AI scribes | IntuitionLabs |
+
+**Limitations:** Post-encounter, no AR glasses, limited language support, human scribes in background
+
+### Suki AI
+| Metric | Stat | Source |
+|--------|------|--------|
+| Time saved | 72% faster notes, 41% reduction | Suki |
+| After-hours saved | 48 min/day (~4 hrs/week) | Suki |
+| Burnout reduction | 60% | Suki |
+| ROI | 6-9X in year 1 | Suki |
+| Note quality | 54% improvement | Suki |
+| Adoption rate | 70%+ among clinicians | Suki |
+| KLAS score | 93.2/100 | KLAS Research |
+
+**Limitations:** Voice-first but phone/tablet only, no AR, post-encounter processing, limited languages
+
+### MDx Vision Competitive Advantages
+1. **Real-time in-encounter** - Not post-encounter like all competitors
+2. **AR glasses** - True hands-free, eyes on patient (no one else has this)
+3. **500+ languages** - Real-time translation during encounter
+4. **Live EHR write-back** - Data inserted during encounter, not after
+5. **A.R.I.M. interpolation** - AI synthesizes context, not just transcribes
+
+**Sources:**
+- https://www.nuance.com/healthcare/dragon-ai-clinical-solutions/dax-copilot.html
+- https://augmedix.com/physicians-and-group-practices/
+- https://www.suki.ai/
+- https://www.healthcareitnews.com/news/nuance-ai-copilot-now-fully-embedded-epic-ehr
+
+---
+
 ## Hardware Target
 
 ### Vuzix Smart Glasses
