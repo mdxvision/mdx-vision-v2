@@ -8,27 +8,25 @@
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
         :root {
-            --primary: #22c55e;
-            --primary-dark: #15803d;
-            --accent: #86efac;
+            --primary: #15803d;
+            --primary-light: #22c55e;
+            --accent: #166534;
+            --success: #22c55e;
             --warning: #f97316;
-            --danger: #ef4444;
-            --dark: #0a0f0d;
-            --dark-card: #111916;
-            --dark-border: #1f2e27;
-            --light: #f0fdf4;
-            --gray: #9ca3af;
-            --gray-light: #1a2520;
-            --text-primary: #ffffff;
-            --text-secondary: #9ca3af;
+            --danger: #dc2626;
+            --dark: #1a1a1a;
+            --light: #ffffff;
+            --gray: #6b7280;
+            --gray-light: #f3f4f6;
+            --border: #e5e7eb;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         html, body {
             font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', sans-serif;
-            background: var(--dark);
-            color: var(--text-primary);
+            background: var(--light);
+            color: var(--dark);
             overflow: hidden;
             height: 100vh;
             -webkit-font-smoothing: antialiased;
@@ -47,7 +45,7 @@
             visibility: hidden;
             transform: translateX(50px);
             transition: all 0.5s ease;
-            background: var(--dark);
+            background: var(--light);
         }
 
         .slide::before {
@@ -55,7 +53,7 @@
             position: absolute;
             top: 0; left: 0; right: 0;
             height: 4px;
-            background: linear-gradient(90deg, var(--primary-dark), var(--primary), var(--accent));
+            background: linear-gradient(90deg, var(--accent), var(--primary-light));
         }
 
         .slide.active {
@@ -68,7 +66,7 @@
             position: absolute;
             top: 30px; left: 80px;
             height: 28px;
-            filter: brightness(0) invert(1);
+            filter: brightness(0);
         }
 
         .slide-number {
@@ -81,7 +79,7 @@
         h1 {
             font-size: 3rem;
             font-weight: 700;
-            color: var(--text-primary);
+            color: var(--dark);
             margin-bottom: 1rem;
             text-align: center;
         }
@@ -89,7 +87,7 @@
         h2 {
             font-size: 2.5rem;
             font-weight: 300;
-            color: var(--text-primary);
+            color: var(--dark);
             margin-bottom: 0.5rem;
         }
 
@@ -98,7 +96,7 @@
         h3 {
             font-size: 1.1rem;
             font-weight: 600;
-            color: var(--text-primary);
+            color: var(--dark);
             text-transform: uppercase;
             letter-spacing: 2px;
             margin-bottom: 1rem;
@@ -122,7 +120,7 @@
             font-weight: 600;
             letter-spacing: 3px;
             text-transform: uppercase;
-            color: var(--primary);
+            color: var(--primary-light);
             margin-bottom: 10px;
         }
 
@@ -137,7 +135,7 @@
 
         .stat {
             text-align: left;
-            border-left: 3px solid var(--primary);
+            border-left: 3px solid var(--primary-light);
             padding-left: 20px;
         }
 
@@ -147,7 +145,7 @@
         .stat-number {
             font-size: 3rem;
             font-weight: 300;
-            color: var(--text-primary);
+            color: var(--dark);
         }
 
         .stat-label {
@@ -168,8 +166,8 @@
         }
 
         .card {
-            background: var(--dark-card);
-            border-left: 3px solid var(--dark-border);
+            background: transparent;
+            border-left: 3px solid var(--border);
             padding: 25px;
             transition: all 0.3s ease;
         }
@@ -182,7 +180,7 @@
             font-size: 1rem;
             font-weight: 600;
             margin-bottom: 10px;
-            color: var(--text-primary);
+            color: var(--dark);
         }
 
         .card p {
@@ -210,12 +208,12 @@
             align-items: center;
             gap: 12px;
             padding: 12px 0;
-            border-bottom: 1px solid var(--dark-border);
+            border-bottom: 1px solid var(--border);
             font-size: 0.95rem;
             color: var(--gray);
         }
 
-        .check { color: var(--primary); font-weight: 600; }
+        .check { color: var(--primary-light); font-weight: 600; }
 
         .comparison-table {
             width: 100%;
@@ -227,7 +225,7 @@
         .comparison-table th, .comparison-table td {
             padding: 20px 25px;
             text-align: left;
-            border-bottom: 1px solid var(--dark-border);
+            border-bottom: 1px solid var(--border);
         }
 
         .comparison-table th {
@@ -239,7 +237,6 @@
         }
 
         .comparison-table td { font-size: 1rem; color: var(--gray); }
-        .comparison-table tr:first-child td { color: var(--text-primary); font-weight: 600; }
 
         .highlight-number {
             font-size: 2.5rem;
@@ -248,8 +245,8 @@
         }
 
         .highlight-box {
-            background: var(--dark-card);
-            border-left: 4px solid var(--primary);
+            background: transparent;
+            border-left: 4px solid var(--primary-light);
             padding: 25px 30px;
             margin-top: 30px;
             max-width: 800px;
@@ -259,7 +256,7 @@
             font-size: 1rem;
             font-weight: 600;
             margin-bottom: 10px;
-            color: var(--text-primary);
+            color: var(--dark);
         }
 
         .timeline {
@@ -276,18 +273,18 @@
             position: absolute;
             top: 25px; left: 0; right: 0;
             height: 2px;
-            background: linear-gradient(90deg, var(--primary-dark), var(--primary));
+            background: linear-gradient(90deg, var(--accent), var(--primary-light));
         }
 
         .timeline-item { text-align: center; position: relative; z-index: 1; }
 
         .timeline-dot {
             width: 14px; height: 14px;
-            background: var(--primary);
+            background: var(--primary-light);
             border-radius: 50%;
             margin: 18px auto;
-            border: 3px solid var(--dark);
-            box-shadow: 0 0 0 2px var(--primary);
+            border: 3px solid white;
+            box-shadow: 0 0 0 2px var(--primary-light);
         }
 
         .timeline-label {
@@ -305,7 +302,7 @@
         .badge {
             display: inline-block;
             background: var(--primary);
-            color: var(--dark);
+            color: white;
             padding: 8px 20px;
             font-size: 0.85rem;
             font-weight: 600;
@@ -314,19 +311,13 @@
             letter-spacing: 1px;
         }
 
-        .badge-outline {
-            background: transparent;
-            border: 2px solid var(--primary);
-            color: var(--primary);
-        }
-
         .cta {
             display: inline-flex;
             align-items: center;
             gap: 10px;
             padding: 16px 36px;
-            background: var(--primary);
-            color: var(--dark);
+            background: var(--primary-light);
+            color: white;
             font-size: 1rem;
             font-weight: 600;
             text-decoration: none;
@@ -336,7 +327,7 @@
             transition: all 0.3s ease;
         }
 
-        .cta:hover { background: var(--accent); }
+        .cta:hover { background: var(--primary); }
 
         .nav {
             position: fixed;
@@ -349,12 +340,12 @@
 
         .nav-dot {
             width: 8px; height: 8px;
-            background: var(--dark-border);
+            background: var(--border);
             cursor: pointer;
             transition: all 0.3s ease;
         }
 
-        .nav-dot.active { background: var(--primary); width: 20px; }
+        .nav-dot.active { background: var(--primary-light); width: 20px; }
 
         .nav-arrows {
             position: fixed;
@@ -366,8 +357,8 @@
 
         .nav-arrow {
             width: 40px; height: 40px;
-            border: 1px solid var(--dark-border);
-            background: var(--dark-card);
+            border: 1px solid var(--border);
+            background: white;
             color: var(--gray);
             cursor: pointer;
             display: flex;
@@ -388,9 +379,9 @@
         }
 
         .spec-item {
-            background: var(--dark-card);
+            background: transparent;
             padding: 20px;
-            border-left: 3px solid var(--primary);
+            border-left: 3px solid var(--primary-light);
         }
 
         .spec-label {
@@ -403,36 +394,19 @@
 
         .spec-value {
             font-size: 1.1rem;
-            color: var(--text-primary);
+            color: var(--dark);
             font-weight: 500;
         }
 
         .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-            margin-top: 40px;
-            width: 100%;
-            max-width: 1000px;
+            display: flex;
+            gap: 50px;
+            margin-top: 30px;
         }
 
-        .contact-card {
-            background: var(--dark-card);
-            padding: 30px;
-            text-align: center;
-            border-top: 3px solid var(--primary);
-        }
-
-        .contact-card h4 {
-            font-size: 1rem;
-            color: var(--text-primary);
-            margin-bottom: 5px;
-        }
-
-        .contact-card p {
-            font-size: 0.9rem;
-            color: var(--gray);
-        }
+        .contact-item { text-align: center; }
+        .contact-item .label { font-size: 0.8rem; color: var(--gray); margin-bottom: 5px; }
+        .contact-item .value { font-size: 1rem; color: var(--dark); }
 
         /* ═══════════════════════════════════════════════════════════════════════════
            MOBILE RESPONSIVE STYLES
@@ -468,7 +442,6 @@
             .card-grid { grid-template-columns: 1fr; gap: 15px; width: 100%; }
             .two-col { grid-template-columns: 1fr; gap: 30px; width: 100%; }
             .spec-grid { grid-template-columns: 1fr; gap: 15px; width: 100%; }
-            .contact-grid { grid-template-columns: 1fr; gap: 15px; width: 100%; }
             .timeline { flex-direction: column; gap: 30px; width: 100%; }
             .timeline::before { display: none; }
             .nav { display: none !important; }
@@ -490,6 +463,7 @@
             .card { padding: 15px; }
             .feature-item { padding: 10px 0; font-size: 0.85rem; }
             .comparison-table th, .comparison-table td { padding: 15px; font-size: 0.85rem; }
+            .contact-grid { flex-direction: column; gap: 15px; }
             .cta { padding: 14px 28px; font-size: 0.9rem; }
         }
 
@@ -548,16 +522,6 @@
             .spec-label { font-size: 0.7rem !important; }
             .spec-value { font-size: 1rem !important; }
 
-            .contact-grid {
-                display: grid !important;
-                grid-template-columns: 1fr !important;
-                gap: 15px !important;
-                width: 100% !important;
-            }
-            .contact-card { padding: 20px !important; }
-            .contact-card h4 { font-size: 1rem !important; }
-            .contact-card p { font-size: 0.85rem !important; }
-
             .feature-list { gap: 10px !important; }
             .feature-item { font-size: 0.85rem !important; padding: 10px 0 !important; }
             .check { font-size: 1rem !important; }
@@ -581,12 +545,20 @@
             .timeline-item {
                 text-align: left !important;
                 padding-left: 20px !important;
-                border-left: 3px solid var(--primary) !important;
+                border-left: 3px solid var(--primary-light) !important;
                 position: relative !important;
             }
             .timeline-dot { display: none !important; }
             .timeline-label { font-size: 0.8rem !important; }
             .timeline-content { font-size: 0.85rem !important; }
+
+            .contact-grid {
+                flex-direction: column !important;
+                gap: 15px !important;
+                width: 100% !important;
+            }
+            .contact-item .label { font-size: 0.75rem !important; }
+            .contact-item .value { font-size: 0.95rem !important; }
 
             .badge { padding: 6px 15px !important; font-size: 0.75rem !important; }
             .cta { padding: 14px 25px !important; font-size: 0.85rem !important; letter-spacing: 1px !important; }
@@ -597,7 +569,7 @@
 
         @media (max-width: 1024px) {
             html { scroll-behavior: smooth; }
-            .slide + .slide { border-top: 1px solid var(--dark-border); }
+            .slide + .slide { border-top: 1px solid var(--border); }
         }
     </style>
 </head>
@@ -605,27 +577,27 @@
     <div class="deck">
         <!-- Slide 1: Title -->
         <div class="slide active" data-slide="1">
-            <img src="https://mdxvision.github.io/mdx-vision-v2/logos/mdx-logo-white.png" alt="MDx Vision" style="height: 32px;">
-            <h1 style="margin-top: 30px;">A.R.I.M.<sup style="font-size: 1rem;">®</sup></h1>
-            <p class="subtitle" style="font-size: 1.5rem; color: var(--text-primary); font-weight: 300;">Augmented Reality Information Matrix</p>
-            <p style="margin-top: 15px; text-align: center;">Next-Generation AR Smart Glasses for Military Operations</p>
-            <div class="badge" style="margin-top: 30px;">Patent Pending Technology</div>
+            <img src="https://mdxvision.github.io/mdx-vision-v2/logos/mdx-logo-white.png" alt="MDx Vision" style="height: 28px; filter: brightness(0);">
+            <h1 style="margin-top: 30px;">A.R.I.M.<sup style="font-size: 1rem;">®</sup> for Defense</h1>
+            <p class="subtitle">Augmented Reality Information Matrix</p>
+            <p style="margin-top: 15px; text-align: center;">Voice-Activated AR Smart Glasses for Military Operations</p>
+            <div class="badge">Patent Pending</div>
             <div class="stat-grid" style="margin-top: 50px;">
                 <div class="stat">
-                    <div class="stat-number">9→1</div>
-                    <div class="stat-label">Medevac Time Reduction</div>
+                    <div class="stat-number">9-18</div>
+                    <div class="stat-label">Min Traditional Medevac</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">1-4</div>
+                    <div class="stat-label">Min with A.R.I.M.®</div>
                 </div>
                 <div class="stat">
                     <div class="stat-number">500+</div>
-                    <div class="stat-label">Languages Supported</div>
+                    <div class="stat-label">Languages</div>
                 </div>
                 <div class="stat">
                     <div class="stat-number">100%</div>
-                    <div class="stat-label">Hands-Free Operation</div>
-                </div>
-                <div class="stat">
-                    <div class="stat-number">DoD</div>
-                    <div class="stat-label">Security Ready</div>
+                    <div class="stat-label">Hands-Free</div>
                 </div>
             </div>
         </div>
@@ -634,24 +606,24 @@
         <div class="slide" data-slide="2">
             <img src="https://mdxvision.github.io/mdx-vision-v2/logos/mdx-logo-white.png" class="slide-logo">
             <div class="section-label">The Challenge</div>
-            <h2>Combat Medical Documentation<br><strong>Costs Lives</strong></h2>
-            <p style="text-align: center; margin-top: 20px;">In the field, every second matters. Traditional documentation methods slow down critical care.</p>
+            <h2>Combat Documentation <strong>Costs Lives</strong></h2>
+            <p style="text-align: center; margin-top: 20px;">In the field, every second matters. Traditional methods slow critical care.</p>
             <div class="stat-grid" style="margin-top: 50px;">
                 <div class="stat danger">
                     <div class="stat-number">9-18</div>
-                    <div class="stat-label">Minutes for Traditional 9-Line</div>
+                    <div class="stat-label">Minutes for 9-Line Medevac</div>
                 </div>
                 <div class="stat danger">
                     <div class="stat-number">40%</div>
                     <div class="stat-label">Time Lost to Paperwork</div>
                 </div>
                 <div class="stat warning">
-                    <div class="stat-number">Zero</div>
+                    <div class="stat-number">0</div>
                     <div class="stat-label">Hands Free for Treatment</div>
                 </div>
                 <div class="stat warning">
                     <div class="stat-number">Manual</div>
-                    <div class="stat-label">GPS Coordinate Entry</div>
+                    <div class="stat-label">GPS Entry Required</div>
                 </div>
             </div>
             <div class="highlight-box" style="margin-top: 40px;">
@@ -664,38 +636,21 @@
         <div class="slide" data-slide="3">
             <img src="https://mdxvision.github.io/mdx-vision-v2/logos/mdx-logo-white.png" class="slide-logo">
             <div class="section-label">The Solution</div>
-            <h2>Data Exchange Matrix<br><strong>Powered by A.R.I.M.®</strong></h2>
-            <p style="text-align: center; margin-top: 20px;">Voice-activated AR glasses that automate critical battlefield documentation.</p>
-            <div class="card-grid" style="margin-top: 40px;">
-                <div class="card">
-                    <div class="card-icon"><i data-lucide="brain" style="width:32px;height:32px;color:var(--primary);"></i></div>
-                    <h4>AI / Machine Learning</h4>
-                    <p>Intelligent processing for instant decision support and threat assessment.</p>
+            <h2>Data Exchange Matrix <strong>Powered by A.R.I.M.®</strong></h2>
+            <div class="two-col" style="margin-top: 40px;">
+                <div>
+                    <h3>Core Capabilities</h3>
+                    <div class="feature-list">
+                        <div class="feature-item"><span class="check">&#10003;</span> Voice-activated hands-free operation</div>
+                        <div class="feature-item"><span class="check">&#10003;</span> Real-time AR data overlay</div>
+                        <div class="feature-item"><span class="check">&#10003;</span> Automatic GPS coordinate capture</div>
+                        <div class="feature-item"><span class="check">&#10003;</span> Facial recognition & ID verification</div>
+                        <div class="feature-item"><span class="check">&#10003;</span> 500+ language translation</div>
+                        <div class="feature-item"><span class="check">&#10003;</span> Encrypted satellite uplink</div>
+                    </div>
                 </div>
-                <div class="card">
-                    <div class="card-icon"><i data-lucide="glasses" style="width:32px;height:32px;color:var(--primary);"></i></div>
-                    <h4>Augmented Reality</h4>
-                    <p>Heads-up display with real-time data overlay while maintaining situational awareness.</p>
-                </div>
-                <div class="card">
-                    <div class="card-icon"><i data-lucide="mic" style="width:32px;height:32px;color:var(--primary);"></i></div>
-                    <h4>Voice Recognition</h4>
-                    <p>Natural language processing for hands-free command and documentation.</p>
-                </div>
-                <div class="card">
-                    <div class="card-icon"><i data-lucide="map-pin" style="width:32px;height:32px;color:var(--primary);"></i></div>
-                    <h4>GPS Integration</h4>
-                    <p>Automatic location capture and coordinate generation for precise extraction.</p>
-                </div>
-                <div class="card">
-                    <div class="card-icon"><i data-lucide="scan-face" style="width:32px;height:32px;color:var(--primary);"></i></div>
-                    <h4>Facial Recognition</h4>
-                    <p>Identify personnel, verify identities, and track casualties in real-time.</p>
-                </div>
-                <div class="card">
-                    <div class="card-icon"><i data-lucide="shield-check" style="width:32px;height:32px;color:var(--primary);"></i></div>
-                    <h4>Secure Comms</h4>
-                    <p>End-to-end encrypted communications with military-grade security.</p>
+                <div style="text-align: center;">
+                    <img src="https://mdxvision.github.io/mdx-vision-v2/mdx-glasses-navy-transparent.png" alt="MDx Vision Glasses" style="max-width: 300px; width: 100%;">
                 </div>
             </div>
         </div>
@@ -704,7 +659,7 @@
         <div class="slide" data-slide="4">
             <img src="https://mdxvision.github.io/mdx-vision-v2/logos/mdx-logo-white.png" class="slide-logo">
             <div class="section-label">Key Capability</div>
-            <h2>9-Line Medevac<br><strong>Automation</strong></h2>
+            <h2>9-Line Medevac <strong>Automation</strong></h2>
             <p style="text-align: center; margin-top: 20px;">Transform the most critical battlefield protocol from minutes to seconds.</p>
             <table class="comparison-table" style="margin-top: 40px;">
                 <thead>
@@ -722,27 +677,26 @@
                     </tr>
                     <tr>
                         <td>GPS Coordinates</td>
-                        <td>Manual grid reference lookup</td>
-                        <td>Auto-captured from device</td>
+                        <td>Manual grid lookup</td>
+                        <td>Auto-captured</td>
                     </tr>
                     <tr>
                         <td>Patient Count</td>
-                        <td>Manual count & classification</td>
-                        <td>Voice input + auto-tally</td>
+                        <td>Manual count</td>
+                        <td>Voice + auto-tally</td>
                     </tr>
                     <tr>
                         <td>Hands Available</td>
-                        <td>Zero - writing/typing</td>
-                        <td>Both hands for treatment</td>
+                        <td>Zero</td>
+                        <td>Both for treatment</td>
                     </tr>
                     <tr>
                         <td>Radio Transmission</td>
                         <td>Manual relay</td>
-                        <td>Auto-generate & transmit</td>
+                        <td>Auto-generate</td>
                     </tr>
                 </tbody>
             </table>
-            <div class="badge" style="margin-top: 30px;">Saving Minutes Saves Lives</div>
         </div>
 
         <!-- Slide 5: Top Features -->
@@ -750,21 +704,36 @@
             <img src="https://mdxvision.github.io/mdx-vision-v2/logos/mdx-logo-white.png" class="slide-logo">
             <div class="section-label">Capabilities</div>
             <h2>Top <strong>7 Features</strong></h2>
-            <div class="two-col" style="margin-top: 40px;">
-                <div>
-                    <div class="feature-list">
-                        <div class="feature-item"><span class="check">01</span> <strong>Augmented Reality Display</strong> - Real-time data overlay</div>
-                        <div class="feature-item"><span class="check">02</span> <strong>500+ Language Support</strong> - Real-time translation</div>
-                        <div class="feature-item"><span class="check">03</span> <strong>GPS & Navigation</strong> - Auto-coordinate capture</div>
-                        <div class="feature-item"><span class="check">04</span> <strong>Facial Recognition</strong> - Identity verification</div>
-                        <div class="feature-item"><span class="check">05</span> <strong>Night Vision Compatible</strong> - Low-light operation</div>
-                        <div class="feature-item"><span class="check">06</span> <strong>Thermal Imaging</strong> - Heat signature detection</div>
-                        <div class="feature-item"><span class="check">07</span> <strong>Secure Satellite Uplink</strong> - Global connectivity</div>
-                    </div>
+            <div class="card-grid" style="margin-top: 40px;">
+                <div class="card">
+                    <div class="card-icon"><i data-lucide="glasses" style="width:28px;height:28px;color:var(--primary);"></i></div>
+                    <h4>Augmented Reality Display</h4>
+                    <p>Real-time data overlay maintaining situational awareness.</p>
                 </div>
-                <div style="text-align: center;">
-                    <img src="https://mdxvision.github.io/mdx-vision-v2/mdx-glasses-navy-transparent.png" alt="MDx Vision Glasses" style="max-width: 300px; width: 100%; filter: brightness(0.9) contrast(1.1);">
-                    <div class="badge badge-outline" style="margin-top: 20px;">CES Award Winner</div>
+                <div class="card">
+                    <div class="card-icon"><i data-lucide="languages" style="width:28px;height:28px;color:var(--primary);"></i></div>
+                    <h4>500+ Languages</h4>
+                    <p>Real-time translation for global operations.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon"><i data-lucide="map-pin" style="width:28px;height:28px;color:var(--primary);"></i></div>
+                    <h4>GPS & Navigation</h4>
+                    <p>Auto-coordinate capture for precise extraction.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon"><i data-lucide="scan-face" style="width:28px;height:28px;color:var(--primary);"></i></div>
+                    <h4>Facial Recognition</h4>
+                    <p>Identity verification and personnel tracking.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon"><i data-lucide="moon" style="width:28px;height:28px;color:var(--primary);"></i></div>
+                    <h4>Night Vision Compatible</h4>
+                    <p>Low-light and thermal imaging operation.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon"><i data-lucide="satellite" style="width:28px;height:28px;color:var(--primary);"></i></div>
+                    <h4>Secure Satellite Uplink</h4>
+                    <p>Global encrypted connectivity.</p>
                 </div>
             </div>
         </div>
@@ -773,12 +742,12 @@
         <div class="slide" data-slide="6">
             <img src="https://mdxvision.github.io/mdx-vision-v2/logos/mdx-logo-white.png" class="slide-logo">
             <div class="section-label">Hardware</div>
-            <h2>Vuzix Smart Glasses<br><strong>Military Edition</strong></h2>
+            <h2>Vuzix Smart Glasses <strong>Military Edition</strong></h2>
             <div class="two-col" style="margin-top: 40px;">
                 <div>
                     <div class="spec-grid" style="max-width: 100%;">
                         <div class="spec-item">
-                            <div class="spec-label">Display Engine</div>
+                            <div class="spec-label">Display</div>
                             <div class="spec-value">Cobra Full-Color</div>
                         </div>
                         <div class="spec-item">
@@ -786,8 +755,8 @@
                             <div class="spec-value">40GB Memory</div>
                         </div>
                         <div class="spec-item">
-                            <div class="spec-label">Operating System</div>
-                            <div class="spec-value">Android OS</div>
+                            <div class="spec-label">OS</div>
+                            <div class="spec-value">Android</div>
                         </div>
                         <div class="spec-item">
                             <div class="spec-label">Camera</div>
@@ -795,7 +764,7 @@
                         </div>
                         <div class="spec-item">
                             <div class="spec-label">Audio</div>
-                            <div class="spec-value">Noise-Cancelling Mic</div>
+                            <div class="spec-value">Noise-Cancelling</div>
                         </div>
                         <div class="spec-item">
                             <div class="spec-label">Connectivity</div>
@@ -807,46 +776,41 @@
                     <h3>Display Features</h3>
                     <div class="feature-list">
                         <div class="feature-item"><span class="check">&#10003;</span> See-through waveguide display</div>
-                        <div class="feature-item"><span class="check">&#10003;</span> Full-color see-through optics</div>
+                        <div class="feature-item"><span class="check">&#10003;</span> Full-color optics</div>
                         <div class="feature-item"><span class="check">&#10003;</span> Helmet mount compatible</div>
-                        <div class="feature-item"><span class="check">&#10003;</span> Stereo speakers built-in</div>
-                        <div class="feature-item"><span class="check">&#10003;</span> All-day battery life</div>
+                        <div class="feature-item"><span class="check">&#10003;</span> Stereo speakers</div>
+                        <div class="feature-item"><span class="check">&#10003;</span> All-day battery</div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Slide 7: Security & Compliance -->
+        <!-- Slide 7: Security -->
         <div class="slide" data-slide="7">
             <img src="https://mdxvision.github.io/mdx-vision-v2/logos/mdx-logo-white.png" class="slide-logo">
             <div class="section-label">Security</div>
-            <h2>Military-Grade<br><strong>Security & Compliance</strong></h2>
+            <h2>Military-Grade <strong>Compliance</strong></h2>
             <div class="two-col" style="margin-top: 40px;">
                 <div>
-                    <h3>Encryption & Authentication</h3>
+                    <h3>Encryption</h3>
                     <div class="feature-list">
                         <div class="feature-item"><span class="check">&#10003;</span> AES-256-bit encryption</div>
-                        <div class="feature-item"><span class="check">&#10003;</span> Biometric voice authentication</div>
+                        <div class="feature-item"><span class="check">&#10003;</span> Biometric voice auth</div>
                         <div class="feature-item"><span class="check">&#10003;</span> Auto-lock on removal</div>
                         <div class="feature-item"><span class="check">&#10003;</span> Remote wipe capability</div>
-                        <div class="feature-item"><span class="check">&#10003;</span> TOTP 2-factor auth</div>
-                        <div class="feature-item"><span class="check">&#10003;</span> Hardware-backed keystore</div>
+                        <div class="feature-item"><span class="check">&#10003;</span> Hardware keystore</div>
                     </div>
                 </div>
                 <div>
-                    <h3>DoD Compliance Ready</h3>
+                    <h3>DoD Ready</h3>
                     <div class="feature-list">
-                        <div class="feature-item"><span class="check">&#10003;</span> <strong>IL4/IL5</strong> - Impact Level ready</div>
-                        <div class="feature-item"><span class="check">&#10003;</span> <strong>FIPS 140-2</strong> - Crypto validation</div>
-                        <div class="feature-item"><span class="check">&#10003;</span> <strong>STIGs</strong> - Hardening guidelines</div>
-                        <div class="feature-item"><span class="check">&#10003;</span> <strong>Air-gapped</strong> - Offline operation</div>
-                        <div class="feature-item"><span class="check">&#10003;</span> <strong>Audit logging</strong> - Full activity trail</div>
+                        <div class="feature-item"><span class="check">&#10003;</span> <strong>IL4/IL5</strong> Impact Level</div>
+                        <div class="feature-item"><span class="check">&#10003;</span> <strong>FIPS 140-2</strong> Crypto</div>
+                        <div class="feature-item"><span class="check">&#10003;</span> <strong>STIGs</strong> Hardening</div>
+                        <div class="feature-item"><span class="check">&#10003;</span> <strong>Air-gapped</strong> Offline</div>
+                        <div class="feature-item"><span class="check">&#10003;</span> <strong>Full</strong> Audit Logging</div>
                     </div>
                 </div>
-            </div>
-            <div class="highlight-box" style="margin-top: 40px;">
-                <h4>Zero Data Exposure</h4>
-                <p>All sensitive data encrypted at rest and in transit. Device automatically wipes on tamper detection or remote command.</p>
             </div>
         </div>
 
@@ -857,39 +821,39 @@
             <h2>Operational <strong>Use Cases</strong></h2>
             <div class="card-grid" style="margin-top: 40px;">
                 <div class="card">
-                    <div class="card-icon"><i data-lucide="heart-pulse" style="width:32px;height:32px;color:var(--primary);"></i></div>
+                    <div class="card-icon"><i data-lucide="heart-pulse" style="width:28px;height:28px;color:var(--primary);"></i></div>
                     <h4>Combat Medics</h4>
-                    <p>9-Line Medevac automation, casualty tracking, treatment protocols, real-time vitals.</p>
+                    <p>9-Line automation, casualty tracking, treatment protocols.</p>
                 </div>
                 <div class="card">
-                    <div class="card-icon"><i data-lucide="crosshair" style="width:32px;height:32px;color:var(--primary);"></i></div>
+                    <div class="card-icon"><i data-lucide="crosshair" style="width:28px;height:28px;color:var(--primary);"></i></div>
                     <h4>Infantry Operations</h4>
-                    <p>Tactical overlays, navigation, target identification, unit coordination.</p>
+                    <p>Tactical overlays, navigation, target identification.</p>
                 </div>
                 <div class="card">
-                    <div class="card-icon"><i data-lucide="radio-tower" style="width:32px;height:32px;color:var(--primary);"></i></div>
+                    <div class="card-icon"><i data-lucide="radio-tower" style="width:28px;height:28px;color:var(--primary);"></i></div>
                     <h4>Command & Control</h4>
-                    <p>Real-time situational awareness, asset tracking, communication coordination.</p>
+                    <p>Situational awareness, asset tracking, coordination.</p>
                 </div>
                 <div class="card">
-                    <div class="card-icon"><i data-lucide="globe" style="width:32px;height:32px;color:var(--primary);"></i></div>
+                    <div class="card-icon"><i data-lucide="globe" style="width:28px;height:28px;color:var(--primary);"></i></div>
                     <h4>Translation Services</h4>
-                    <p>500+ language real-time translation for HUMINT and civil affairs operations.</p>
+                    <p>500+ language translation for civil affairs.</p>
                 </div>
                 <div class="card">
-                    <div class="card-icon"><i data-lucide="wrench" style="width:32px;height:32px;color:var(--primary);"></i></div>
-                    <h4>Maintenance & Logistics</h4>
-                    <p>Technical manuals overlay, parts identification, repair guidance.</p>
+                    <div class="card-icon"><i data-lucide="wrench" style="width:28px;height:28px;color:var(--primary);"></i></div>
+                    <h4>Maintenance</h4>
+                    <p>Technical manuals, parts ID, repair guidance.</p>
                 </div>
                 <div class="card">
-                    <div class="card-icon"><i data-lucide="graduation-cap" style="width:32px;height:32px;color:var(--primary);"></i></div>
-                    <h4>Training & Simulation</h4>
-                    <p>AR training scenarios, performance tracking, after-action review.</p>
+                    <div class="card-icon"><i data-lucide="graduation-cap" style="width:28px;height:28px;color:var(--primary);"></i></div>
+                    <h4>Training</h4>
+                    <p>AR scenarios, performance tracking, AAR.</p>
                 </div>
             </div>
         </div>
 
-        <!-- Slide 9: Deployment Timeline -->
+        <!-- Slide 9: Deployment -->
         <div class="slide" data-slide="9">
             <img src="https://mdxvision.github.io/mdx-vision-v2/logos/mdx-logo-white.png" class="slide-logo">
             <div class="section-label">Deployment</div>
@@ -914,51 +878,50 @@
                 <div class="timeline-item">
                     <div class="timeline-label">Phase 4</div>
                     <div class="timeline-dot"></div>
-                    <div class="timeline-content">Deployment<br>Full rollout<br>Ongoing support</div>
+                    <div class="timeline-content">Deployment<br>Full rollout<br>Support</div>
                 </div>
             </div>
             <div class="highlight-box" style="margin-top: 40px;">
                 <h4>SBIR/STTR Ready</h4>
-                <p>Eligible for DoD Small Business Innovation Research programs. Contact us for Phase I/II proposal collaboration.</p>
+                <p>Eligible for DoD Small Business Innovation Research programs. Contact us for Phase I/II collaboration.</p>
             </div>
         </div>
 
-        <!-- Slide 10: Global Presence & Contact -->
+        <!-- Slide 10: Contact -->
         <div class="slide" data-slide="10">
             <img src="https://mdxvision.github.io/mdx-vision-v2/logos/mdx-logo-white.png" class="slide-logo">
             <div class="section-label">Contact</div>
-            <h2>Global <strong>Presence</strong></h2>
-            <p style="text-align: center; margin-top: 20px;">MDx Vision operates worldwide with offices on five continents.</p>
-            <div class="contact-grid" style="margin-top: 40px;">
-                <div class="contact-card">
-                    <i data-lucide="flag" style="width:32px;height:32px;color:var(--primary);margin-bottom:15px;"></i>
-                    <h4>Americas</h4>
-                    <p>United States HQ<br>South America</p>
+            <h2>Ready to <strong>Partner</strong>?</h2>
+            <div class="card-grid" style="max-width: 900px; margin-top: 40px;">
+                <div class="card" style="text-align: center; border-left: none; border-top: 3px solid var(--primary);">
+                    <div class="card-icon"><i data-lucide="calendar" style="width:32px;height:32px;color:var(--primary);"></i></div>
+                    <h4>1. Demo</h4>
+                    <p>See A.R.I.M.® in action with your use cases.</p>
                 </div>
-                <div class="contact-card">
-                    <i data-lucide="flag" style="width:32px;height:32px;color:var(--primary);margin-bottom:15px;"></i>
-                    <h4>EMEA</h4>
-                    <p>Europe<br>Middle East &amp; Africa</p>
+                <div class="card" style="text-align: center; border-left: none; border-top: 3px solid var(--primary);">
+                    <div class="card-icon"><i data-lucide="clipboard-check" style="width:32px;height:32px;color:var(--primary);"></i></div>
+                    <h4>2. Pilot</h4>
+                    <p>Field testing with your unit.</p>
                 </div>
-                <div class="contact-card">
-                    <i data-lucide="flag" style="width:32px;height:32px;color:var(--primary);margin-bottom:15px;"></i>
-                    <h4>Asia Pacific</h4>
-                    <p>Asia Regional<br>Pacific Operations</p>
+                <div class="card" style="text-align: center; border-left: none; border-top: 3px solid var(--primary);">
+                    <div class="card-icon"><i data-lucide="handshake" style="width:32px;height:32px;color:var(--primary);"></i></div>
+                    <h4>3. Deploy</h4>
+                    <p>Full-scale rollout with ongoing support.</p>
                 </div>
             </div>
             <a href="mailto:defense@mdxvision.com" class="cta">Contact Defense Team &#10132;</a>
-            <div style="display: flex; gap: 40px; margin-top: 30px; flex-wrap: wrap; justify-content: center;">
-                <div style="text-align: center;">
-                    <div style="font-size: 0.75rem; color: var(--gray); text-transform: uppercase; letter-spacing: 1px;">Defense Inquiries</div>
-                    <div style="font-size: 1rem; color: var(--text-primary); margin-top: 5px;">defense@mdxvision.com</div>
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <div class="label">Defense Inquiries</div>
+                    <div class="value">defense@mdxvision.com</div>
                 </div>
-                <div style="text-align: center;">
-                    <div style="font-size: 0.75rem; color: var(--gray); text-transform: uppercase; letter-spacing: 1px;">General</div>
-                    <div style="font-size: 1rem; color: var(--text-primary); margin-top: 5px;">sales@mdxvision.com</div>
+                <div class="contact-item">
+                    <div class="label">General</div>
+                    <div class="value">sales@mdxvision.com</div>
                 </div>
-                <div style="text-align: center;">
-                    <div style="font-size: 0.75rem; color: var(--gray); text-transform: uppercase; letter-spacing: 1px;">Website</div>
-                    <div style="font-size: 1rem; color: var(--text-primary); margin-top: 5px;">mdxvision.com</div>
+                <div class="contact-item">
+                    <div class="label">Website</div>
+                    <div class="value">mdxvision.com</div>
                 </div>
             </div>
         </div>
