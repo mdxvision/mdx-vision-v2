@@ -175,7 +175,7 @@
 - Clinical summarization
 
 ### A.R.I.M. Technology (Patent Pending)
-- Augmented Reality Information Matrix
+- Augmented Reality Interpolation Modality
 - Core differentiator
 - Real-time data overlay
 

@@ -313,7 +313,7 @@ Create a standalone version that can also be presented:
 - Founded: 2016
 - Languages: 500+
 - Real-time processing: Yes (core differentiator)
-- A.R.I.M. Technology: Patent pending
+- A.R.I.M. Technology: Augmented Reality Interpolation Modality (Patent pending)
 
 ### Avoid (Unverified)
 - 10M+ patient encounters (needs verification)
