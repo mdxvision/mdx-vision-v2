@@ -543,64 +543,117 @@
         }
 
         @media (max-width: 480px) {
-            .slide { padding: 20px 12px; padding-top: 50px; padding-bottom: 30px; }
-            h1 { font-size: 1.1rem; line-height: 1.4; }
-            h2 { font-size: 1rem; }
-            h3 { font-size: 0.8rem; letter-spacing: 1px; }
-            p { font-size: 0.8rem; }
-            .subtitle { font-size: 0.9rem; }
-            .section-label { font-size: 0.65rem; }
-            .stat-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
-            .stat { padding-left: 12px; border-left-width: 2px; }
-            .stat-number { font-size: 1.5rem; }
-            .stat-label { font-size: 0.65rem; }
-            .card-grid { grid-template-columns: 1fr; gap: 12px; }
-            .card { padding: 12px; }
-            .card h4 { font-size: 0.85rem; }
-            .card p { font-size: 0.75rem; }
-            .pricing-grid { grid-template-columns: 1fr; gap: 15px; }
-            .pricing-card { padding: 15px; }
-            .pricing-card .price { font-size: 1.5rem; }
-            .pricing-card li { font-size: 0.75rem; padding: 6px 0; }
-            .staff-grid { grid-template-columns: repeat(3, 1fr); gap: 6px; }
-            .staff-item { padding: 8px 4px; }
-            .staff-item i { width: 20px !important; height: 20px !important; }
-            .staff-item span { font-size: 0.6rem; }
-            .russia-badge { padding: 5px 10px; font-size: 0.7rem; }
-            .pricing-card.featured::before { font-size: 0.55rem; padding: 2px 6px; top: -10px; }
-            .two-col { gap: 20px; }
-            .two-col img { max-width: 100% !important; height: auto !important; }
-            .feature-list { gap: 8px; }
-            .feature-item { font-size: 0.75rem; padding: 8px 0; }
-            .check { font-size: 0.9rem; }
-            .highlight-box { padding: 15px; margin-top: 20px; }
-            .highlight-box h4 { font-size: 0.85rem; }
-            .highlight-box p { font-size: 0.75rem; }
-            .roi-box { padding: 20px 15px; margin-top: 25px; }
-            .roi-box .stat-number { font-size: 2.5rem; }
-            .roi-box .stat-label { font-size: 0.7rem; }
-            .quote { font-size: 1rem; line-height: 1.4; }
-            .timeline { gap: 20px; }
-            .timeline-item { padding-left: 15px; }
-            .timeline-label { font-size: 0.7rem; }
-            .timeline-content { font-size: 0.75rem; }
-            .contact-grid { gap: 12px; }
-            .contact-item .label { font-size: 0.7rem; }
-            .contact-item .value { font-size: 0.85rem; }
-            .cta { padding: 12px 20px; font-size: 0.8rem; letter-spacing: 1px; }
-            .comparison-table th, .comparison-table td { padding: 8px 6px; font-size: 0.7rem; }
-            .slide-logo { height: 18px; left: 12px; top: 12px; }
-            .slide-number { font-size: 0.65rem; right: 12px; bottom: 12px; }
-        }
+            .slide {
+                padding: 20px 15px !important;
+                padding-top: 50px !important;
+                padding-bottom: 30px !important;
+            }
+            h1 { font-size: 1.3rem !important; line-height: 1.3 !important; text-align: center !important; }
+            h2 { font-size: 1.2rem !important; text-align: center !important; }
+            h3 { font-size: 0.85rem !important; letter-spacing: 1px !important; }
+            p { font-size: 0.9rem !important; }
+            .subtitle { font-size: 1rem !important; }
+            .section-label { font-size: 0.7rem !important; }
 
-        /* Extra small phones */
-        @media (max-width: 360px) {
-            .slide { padding: 15px 10px; padding-top: 45px; }
-            h1 { font-size: 1rem; }
-            .stat-grid { grid-template-columns: 1fr; gap: 8px; }
-            .stat-number { font-size: 1.3rem; }
-            .staff-grid { grid-template-columns: repeat(2, 1fr); }
-            .pricing-card .price { font-size: 1.3rem; }
+            /* Force single column for stats */
+            .stat-grid {
+                display: grid !important;
+                grid-template-columns: 1fr !important;
+                gap: 15px !important;
+                width: 100% !important;
+                max-width: 100% !important;
+            }
+            .stat {
+                padding-left: 15px !important;
+                border-left-width: 3px !important;
+            }
+            .stat-number { font-size: 2rem !important; }
+            .stat-label { font-size: 0.75rem !important; }
+
+            /* Force single column for cards */
+            .card-grid {
+                display: grid !important;
+                grid-template-columns: 1fr !important;
+                gap: 15px !important;
+                width: 100% !important;
+            }
+            .card { padding: 15px !important; }
+            .card h4 { font-size: 1rem !important; }
+            .card p { font-size: 0.85rem !important; }
+
+            /* Force single column for pricing */
+            .pricing-grid {
+                display: grid !important;
+                grid-template-columns: 1fr !important;
+                gap: 20px !important;
+                width: 100% !important;
+            }
+            .pricing-card { padding: 20px !important; }
+            .pricing-card .price { font-size: 2rem !important; }
+            .pricing-card li { font-size: 0.85rem !important; padding: 8px 0 !important; }
+            .pricing-card.featured::before { font-size: 0.6rem !important; padding: 3px 8px !important; top: -10px !important; }
+
+            /* Staff grid - 2 columns on mobile */
+            .staff-grid {
+                display: grid !important;
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 10px !important;
+                width: 100% !important;
+            }
+            .staff-item { padding: 12px 8px !important; }
+            .staff-item i { width: 24px !important; height: 24px !important; }
+            .staff-item span { font-size: 0.7rem !important; }
+
+            /* Two column layout - stack */
+            .two-col {
+                display: grid !important;
+                grid-template-columns: 1fr !important;
+                gap: 25px !important;
+                width: 100% !important;
+            }
+            .two-col img { max-width: 250px !important; height: auto !important; margin: 0 auto !important; }
+
+            .russia-badge { padding: 8px 15px !important; font-size: 0.8rem !important; }
+            .feature-list { gap: 10px !important; }
+            .feature-item { font-size: 0.85rem !important; padding: 10px 0 !important; }
+            .check { font-size: 1rem !important; }
+            .highlight-box { padding: 20px !important; margin-top: 25px !important; }
+            .highlight-box h4 { font-size: 1rem !important; }
+            .highlight-box p { font-size: 0.85rem !important; }
+            .roi-box { padding: 25px 20px !important; margin-top: 30px !important; width: 100% !important; }
+            .roi-box .stat-number { font-size: 2.5rem !important; }
+            .roi-box .stat-label { font-size: 0.8rem !important; }
+            .quote { font-size: 1.1rem !important; line-height: 1.4 !important; }
+
+            /* Timeline */
+            .timeline {
+                flex-direction: column !important;
+                gap: 25px !important;
+                width: 100% !important;
+            }
+            .timeline::before { display: none !important; }
+            .timeline-item {
+                text-align: left !important;
+                padding-left: 20px !important;
+                border-left: 3px solid var(--accent) !important;
+                position: relative !important;
+            }
+            .timeline-dot { display: none !important; }
+            .timeline-label { font-size: 0.8rem !important; }
+            .timeline-content { font-size: 0.85rem !important; }
+
+            /* Contact */
+            .contact-grid {
+                flex-direction: column !important;
+                gap: 15px !important;
+                width: 100% !important;
+            }
+            .contact-item .label { font-size: 0.75rem !important; }
+            .contact-item .value { font-size: 0.95rem !important; }
+            .cta { padding: 14px 25px !important; font-size: 0.85rem !important; letter-spacing: 1px !important; }
+
+            .slide-logo { height: 20px !important; left: 15px !important; top: 15px !important; }
+            .slide-number { font-size: 0.7rem !important; right: 15px !important; bottom: 15px !important; }
         }
 
         /* Smooth scrolling for mobile */
