@@ -369,6 +369,30 @@
 
         .nav-arrow:hover { border-color: var(--primary); color: var(--primary); }
 
+        .flow-diagram {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 40px;
+            width: 100%;
+            max-width: 1000px;
+        }
+
+        .flow-col {
+            flex: 1;
+            text-align: center;
+        }
+
+        .flow-col.engine {
+            flex: 1.2;
+        }
+
+        .flow-arrow {
+            font-size: 2rem;
+            color: var(--primary);
+        }
+
         .spec-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -446,6 +470,8 @@
             .timeline::before { display: none; }
             .nav { display: none !important; }
             .nav-arrows { display: none !important; }
+            .flow-diagram { flex-direction: column; gap: 15px; }
+            .flow-arrow { transform: rotate(90deg); font-size: 1.5rem; }
         }
 
         @media (max-width: 768px) {
@@ -646,9 +672,9 @@
             <h2>How <strong>Interpolation</strong> Works</h2>
             <p style="text-align: center; margin-top: 10px;">A.R.I.M. doesn't just display data — it synthesizes intelligence.</p>
 
-            <div style="display: flex; align-items: center; justify-content: center; gap: 20px; margin-top: 40px; width: 100%; max-width: 1000px;">
+            <div class="flow-diagram">
                 <!-- Inputs -->
-                <div style="flex: 1; text-align: center;">
+                <div class="flow-col">
                     <div style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 2px; color: var(--gray); margin-bottom: 15px;">Fragmented Inputs</div>
                     <div style="display: flex; flex-direction: column; gap: 8px;">
                         <div style="background: var(--gray-light); padding: 10px 15px; font-size: 0.85rem; border-left: 3px solid var(--warning);">Voice Command</div>
@@ -660,10 +686,10 @@
                 </div>
 
                 <!-- Arrow -->
-                <div style="font-size: 2rem; color: var(--primary);">→</div>
+                <div class="flow-arrow">→</div>
 
                 <!-- Interpolation Engine -->
-                <div style="flex: 1.2; text-align: center;">
+                <div class="flow-col engine">
                     <div style="background: linear-gradient(135deg, var(--primary), var(--primary-light)); color: white; padding: 30px 25px; border-radius: 8px;">
                         <div style="font-size: 1.1rem; font-weight: 600; margin-bottom: 10px;">A.R.I.M. Engine</div>
                         <div style="font-size: 0.8rem; opacity: 0.9; line-height: 1.6;">
@@ -676,10 +702,10 @@
                 </div>
 
                 <!-- Arrow -->
-                <div style="font-size: 2rem; color: var(--primary);">→</div>
+                <div class="flow-arrow">→</div>
 
                 <!-- Outputs -->
-                <div style="flex: 1; text-align: center;">
+                <div class="flow-col">
                     <div style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 2px; color: var(--gray); margin-bottom: 15px;">Unified Output</div>
                     <div style="display: flex; flex-direction: column; gap: 8px;">
                         <div style="background: var(--gray-light); padding: 10px 15px; font-size: 0.85rem; border-left: 3px solid var(--primary-light);">Complete 9-Line</div>
