@@ -309,20 +309,69 @@ Create a standalone version that can also be presented:
 
 ## Frontend Design Principles
 
-### Visual Parity
+### Industry Research
 
-**Problem → Solution slides must mirror each other.**
+#### McKinsey/Deloitte Slide Structure
+*Source: [SlideModel](https://slidemodel.com/mckinsey-presentation-structure/), [Flevy](https://flevy.com/topic/deloitte-powerpoint)*
+
+- **Action Titles**: Each slide must have a sentence that articulates the key insight (not just a label)
+- **Pyramid Principle**: Main conclusion first, then supporting arguments
+- **One idea per slide**: If every element "yells" for attention, nothing gets heard
+- **Minimalist design**: Clean, uncluttered slides with consistent visual theme
+
+#### Typography Best Practices
+*Source: [BrightCarbon](https://www.brightcarbon.com/blog/presentation-font-size/), [Superchart](https://www.superchart.io/blog/presentation-font-size)*
+
+| Element | Minimum | Recommended |
+|---------|---------|-------------|
+| Titles | 32pt | 36-44pt |
+| Subtitles | 24pt | 28pt |
+| Body text | 18pt | 24-32pt |
+| Captions/labels | 16pt | 20pt |
+| Never use | <18pt | - |
+
+- Limit to 2-3 fonts per presentation
+- Sans-serif fonts (Arial, Calibri, Helvetica) for clarity
+- Line spacing: 1.2-1.5x font size
+- High contrast: dark on light or light on dark
+
+#### Whitespace (The 2/3 Rule)
+*Source: [SlidesCarnival](https://www.slidescarnival.com/learn/5-tips-for-working-with-white-space-in-your-presentation-slides), [BrightCarbon](https://www.brightcarbon.com/blog/presentation-whitespace/)*
+
+- **Aim for 2/3 whitespace**: Only 1/3 of slide should contain content
+- Whitespace improves retention, focus, and perceived professionalism
+- Split content across slides rather than cramming
+- Group related elements, surround with space
+
+#### Color Psychology
+*Source: [SlidesCarnival](https://www.slidescarnival.com/learn/the-ultimate-guide-to-color-theory-in-presentation-design-what-colors-mean-and-how-this-impacts-your-audience), [NIH](https://pmc.ncbi.nlm.nih.gov/articles/PMC4383146/)*
+
+- **Red**: Increases heart rate, signals urgency/danger, makes time feel longer
+- **Green**: Calming effect, signals success/safety, makes time feel shorter
+- Red and green are opponent colors neurologically - use to show transformation
+- Avoid red/green combinations without enough contrast (accessibility)
+
+---
+
+### MDx Internal Standards
+*Developed through deck iteration and refinement*
+
+#### Visual Parity Rule
+
+**Problem → Solution slides must mirror each other exactly.**
 
 | Element | Problem Slide | Solution Slide |
 |---------|---------------|----------------|
 | Layout | 4-stat horizontal grid | 4-stat horizontal grid (same) |
 | Numbers | Big, bold stats | Big, bold stats (same) |
-| Colors | Red/orange (danger) | Green (success) |
+| Colors | All red (danger) | All green (success) |
 | Structure | Identical | Identical |
 
 The audience should **instantly see the transformation** without reading. Same structure, different colors.
 
-### Layout Patterns
+**Why all one color per slide**: Mixed colors (red + orange) create confusion. Problem = all red. Solution = all green. Clear visual signal.
+
+#### Layout Patterns
 
 **Stat Grid (4-up)**
 ```
@@ -351,13 +400,12 @@ Use for: Features + product image, Specs + hardware
 ```
 Use for: Use cases, Team members, Features
 
-### Color System
+#### MDx Color System
 
 | Purpose | Color | Use |
 |---------|-------|-----|
-| Danger/Problem | Red (#dc2626) | Problem stats, warnings |
-| Warning | Orange (#f97316) | Secondary problems |
-| Success/Solution | Green (#22c55e) | Solution stats, checkmarks |
+| Danger/Problem | Red (#dc2626) | ALL stats on problem slides |
+| Success/Solution | Green (#22c55e) | ALL stats on solution slides |
 | Primary brand | Vertical color | Headers, accents |
 | Neutral | Gray (#6b7280) | Body text, labels |
 | Background | White (#ffffff) | Clean, enterprise look |
@@ -369,7 +417,7 @@ Use for: Use cases, Team members, Features
 - Fire: Orange (#f97316)
 - EMS: Cyan (#00d4ff)
 
-### Typography Hierarchy
+#### MDx Typography Hierarchy
 
 ```
 Section Label    0.75rem  UPPERCASE  Letter-spacing: 3px  Color: Primary
@@ -380,7 +428,7 @@ Stat Number      3rem     Light 300  Big impact numbers
 Stat Label       0.85rem  UPPERCASE  Letter-spacing: 1px
 ```
 
-### Spacing Rules
+#### MDx Spacing Rules
 
 | Element | Spacing |
 |---------|---------|
@@ -391,6 +439,8 @@ Stat Label       0.85rem  UPPERCASE  Letter-spacing: 1px
 | After headline | 20px |
 | After subhead | 40-50px before content |
 
+---
+
 ### CSS Patterns (HTML Decks)
 
 **Stat with colored border:**
@@ -400,7 +450,6 @@ Stat Label       0.85rem  UPPERCASE  Letter-spacing: 1px
   padding-left: 20px;
 }
 .stat.danger { border-left-color: var(--danger); }
-.stat.warning { border-left-color: var(--warning); }
 ```
 
 **Highlight box:**
@@ -436,15 +485,16 @@ All decks must work on mobile (phone preview in email):
 
 ### Design Anti-Patterns
 
-| Don't | Do |
-|-------|-----|
-| Different layouts for Problem/Solution | Mirror the structure |
-| Tiny text to fit more content | Less content, bigger text |
-| Multiple font families | One family, vary weight |
-| Decorative backgrounds | Clean white/light gray |
-| Clipart or stock photos | Real product images |
-| Busy slides with everything | One idea per slide |
-| Inconsistent spacing | Use fixed spacing scale |
+| Don't | Do | Source |
+|-------|-----|--------|
+| Different layouts for Problem/Solution | Mirror the structure | MDx |
+| Mixed colors on same slide type | All red OR all green | MDx |
+| Tiny text to fit more content | Less content, bigger text | Industry |
+| Multiple font families | One family, vary weight | Industry |
+| Decorative backgrounds | Clean white/light gray | McKinsey |
+| Clipart or stock photos | Real product images | Industry |
+| Fill every inch of slide | 2/3 whitespace rule | Industry |
+| Label titles ("Problem") | Action titles (insight) | McKinsey |
 
 ---
 
