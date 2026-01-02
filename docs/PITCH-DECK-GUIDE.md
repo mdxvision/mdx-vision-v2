@@ -307,6 +307,147 @@ Create a standalone version that can also be presented:
 
 ---
 
+## Frontend Design Principles
+
+### Visual Parity
+
+**Problem → Solution slides must mirror each other.**
+
+| Element | Problem Slide | Solution Slide |
+|---------|---------------|----------------|
+| Layout | 4-stat horizontal grid | 4-stat horizontal grid (same) |
+| Numbers | Big, bold stats | Big, bold stats (same) |
+| Colors | Red/orange (danger) | Green (success) |
+| Structure | Identical | Identical |
+
+The audience should **instantly see the transformation** without reading. Same structure, different colors.
+
+### Layout Patterns
+
+**Stat Grid (4-up)**
+```
+┌──────────┐ ┌──────────┐ ┌──────────┐ ┌──────────┐
+│   9-18   │ │    0     │ │    0     │ │  Manual  │
+│ Minutes  │ │Languages │ │Hands-Free│ │   GPS    │
+└──────────┘ └──────────┘ └──────────┘ └──────────┘
+```
+Use for: Problem stats, Solution stats, Key metrics
+
+**Two-Column**
+```
+┌─────────────────┐  ┌─────────────────┐
+│                 │  │                 │
+│   Text/List     │  │     Image       │
+│                 │  │                 │
+└─────────────────┘  └─────────────────┘
+```
+Use for: Features + product image, Specs + hardware
+
+**Card Grid (2x2 or 3-up)**
+```
+┌─────────┐ ┌─────────┐ ┌─────────┐
+│  Card   │ │  Card   │ │  Card   │
+└─────────┘ └─────────┘ └─────────┘
+```
+Use for: Use cases, Team members, Features
+
+### Color System
+
+| Purpose | Color | Use |
+|---------|-------|-----|
+| Danger/Problem | Red (#dc2626) | Problem stats, warnings |
+| Warning | Orange (#f97316) | Secondary problems |
+| Success/Solution | Green (#22c55e) | Solution stats, checkmarks |
+| Primary brand | Vertical color | Headers, accents |
+| Neutral | Gray (#6b7280) | Body text, labels |
+| Background | White (#ffffff) | Clean, enterprise look |
+
+**Vertical Colors:**
+- Healthcare: Cyan (#00d4ff)
+- Military: Green (#15803d)
+- Police: Blue (#3b82f6)
+- Fire: Orange (#f97316)
+- EMS: Cyan (#00d4ff)
+
+### Typography Hierarchy
+
+```
+Section Label    0.75rem  UPPERCASE  Letter-spacing: 3px  Color: Primary
+Headline         2.5rem   Light 300  "Combat Documentation"
+Headline Bold    2.5rem   Bold 700   "Costs Lives" (in primary color)
+Body             1.1rem   Regular    Gray text
+Stat Number      3rem     Light 300  Big impact numbers
+Stat Label       0.85rem  UPPERCASE  Letter-spacing: 1px
+```
+
+### Spacing Rules
+
+| Element | Spacing |
+|---------|---------|
+| Section padding | 60px top/bottom, 100px sides |
+| Between sections | 40-50px margin |
+| Stat grid gap | 40px |
+| Card grid gap | 25px |
+| After headline | 20px |
+| After subhead | 40-50px before content |
+
+### CSS Patterns (HTML Decks)
+
+**Stat with colored border:**
+```css
+.stat {
+  border-left: 3px solid var(--primary);
+  padding-left: 20px;
+}
+.stat.danger { border-left-color: var(--danger); }
+.stat.warning { border-left-color: var(--warning); }
+```
+
+**Highlight box:**
+```css
+.highlight-box {
+  border-left: 4px solid var(--primary);
+  padding: 25px 30px;
+  background: transparent;
+}
+```
+
+**Glass card (dark themes):**
+```css
+.glass {
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+```
+
+### Mobile Responsive
+
+All decks must work on mobile (phone preview in email):
+
+```css
+@media (max-width: 768px) {
+  .stat-grid { grid-template-columns: 1fr 1fr; }
+  .two-col { grid-template-columns: 1fr; }
+  h1 { font-size: 1.5rem; }
+  .slide { padding: 30px 20px; }
+}
+```
+
+### Design Anti-Patterns
+
+| Don't | Do |
+|-------|-----|
+| Different layouts for Problem/Solution | Mirror the structure |
+| Tiny text to fit more content | Less content, bigger text |
+| Multiple font families | One family, vary weight |
+| Decorative backgrounds | Clean white/light gray |
+| Clipart or stock photos | Real product images |
+| Busy slides with everything | One idea per slide |
+| Inconsistent spacing | Use fixed spacing scale |
+
+---
+
 ## MDx Vision Specific
 
 ### Verified Stats (Use These)
