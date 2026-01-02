@@ -232,6 +232,7 @@ src/
     └── logos/
 
 docs/
+├── PITCH-DECK-GUIDE.md    # Universal deck guide (investor, sales, military)
 └── reference/             # MDX documentation
     ├── MASTER-REQUIREMENTS.md
     ├── MDX-HANDOFF.md
