@@ -593,3 +593,46 @@ Working on v2 verticals (police, fire, ems, military) - improving to Apple/Deloi
 | Dec 2025 | Removed Coming Soon section | v2/page.tsx |
 | Dec 2025 | Added Solutions dropdown with verticals | HeaderDark.tsx |
 | Dec 2025 | Added "How It Works" sections to EMS/Military | verticals/*.tsx |
+| Jan 2026 | Updated ROI slide with competitor-benchmarked projections | hospital-sales-deck.html |
+| Jan 2026 | Added DNFB metric to ROI slide | hospital-sales-deck.html |
+| Jan 2026 | Upgraded capabilities slide to enterprise design | hospital-sales-deck.html |
+
+---
+
+## Work In Progress (Hospital Sales Deck)
+
+**File:** `public/hospital-sales-deck.html`
+**Live URL:** https://mdxvision.github.io/mdx-vision-v2/hospital-sales-deck.html
+
+### Completed (Jan 2026)
+- [x] ROI slide updated with middle-ground projections (75%, 2.5 hrs, 85%, 8X)
+- [x] Added DNFB metric (60% reduction)
+- [x] Slide 6 capabilities redesigned to enterprise level (branded containers, tagline, descriptors)
+
+### Remaining Design Tasks
+- [ ] Apply enterprise design treatment to other slides (consistency)
+- [ ] Review slide 3 vs slide 6 for redundancy (both show capabilities-type content)
+- [ ] Consider custom icons/illustrations for full Apple/Deloitte level
+- [ ] Mobile responsive testing for new enterprise layout
+- [ ] Russian hospital deck translation (matching English improvements)
+
+### Design Decisions Made
+| Slide | Decision | Rationale |
+|-------|----------|-----------|
+| Slide 6 | 4 icons instead of 6 cards | Rule of 3-4, reduce cognitive load |
+| Slide 6 | Branded containers with gradients | Enterprise visual depth |
+| Slide 6 | Short descriptors (2-3 words) | Balance between minimal and informative |
+| Slide 8 | 5 ROI metrics including DNFB | Hospital CFO audience cares about revenue |
+
+### ROI Projections Rationale
+Based on competitor benchmarks:
+- DAX: 50% time reduction
+- Augmedix: 80% reduction, 2 hrs/day
+- Suki: 72% faster, 6-9X ROI
+
+MDx "middle ground" projections account for real-time (not post-encounter) advantage:
+- 75% documentation time reduction
+- 2.5 hrs saved per clinician/day
+- 85% same-day note closure
+- 60% DNFB reduction
+- 8X ROI year 1
